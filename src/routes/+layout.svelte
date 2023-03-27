@@ -22,10 +22,8 @@
     <div class="navbar-brand">
         <a class="navbar-item" href="/">
             <img
-                src="$lib/assets/favicon.png"
-                alt="logo"
-                width="90"
-                height="50"
+                src="$lib/assets/favicon_64x64.png"
+                alt="logo principale sciences-2i 64x64"
             />
         </a>
 

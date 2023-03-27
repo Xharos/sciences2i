@@ -18,7 +18,6 @@
     />
 </svelte:head>
 
-<!-- svelte-ignore a11y-img-redundant-alt -->
 <div class="columns is-centered">
     <div class="column is-11">
         <section class="section">
@@ -49,7 +48,7 @@
                             <figure class="image is-4by3">
                                 <img
                                     src="$lib/assets/elec.jpg"
-                                    alt="Placeholder image elec"
+                                    alt="Cours de génie électrique"
                                 />
                             </figure>
                         </a>
@@ -104,7 +103,7 @@
                             <figure class="image is-4by3">
                                 <img
                                     src="$lib/assets/meca.jpg"
-                                    alt="Placeholder image meca"
+                                    alt="Cours de génie mécanique"
                                 />
                             </figure>
                         </a>
@@ -156,7 +155,7 @@
                             <figure class="image is-4by3">
                                 <img
                                     src="$lib/assets/info.jpg"
-                                    alt="Placeholder image info"
+                                    alt="Cours de génie informatique"
                                 />
                             </figure>
                         </a>
