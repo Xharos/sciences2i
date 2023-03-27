@@ -1,0 +1,29 @@
+{
+  "name": "sciences-2i",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-static": "^2.0.1",
+    "@sveltejs/kit": "^1.5.0",
+    "bulma": "^0.9.4",
+    "sass": "^1.53.0",
+    "svelte": "^3.54.0",
+    "svelte-preprocess": "^4.10.7",
+    "vite": "^4.2.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.3.0",
+    "chart.js": "^4.2.1",
+    "katex": "^0.16.4",
+    "svelte-fa": "^3.0.3",
+    "svelte-preprocess-import-assets": "^0.2.6",
+    "svelte-youtube": "^0.0.2"
+  }
+}
