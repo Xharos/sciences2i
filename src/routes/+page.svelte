@@ -107,7 +107,7 @@
                                         <a
                                             class="level-item"
                                             href="https://www.youtube.com/channel/UC197VifUbGS9iqCiYUe0hSA"
-                                            alt="Lien Youtube Valentin BURGAUD"
+                                            alt="Poursuivre vers la chaîne youtube de Valentin BURGAUD"
                                         >
                                             <span class="icon is-medium">
                                                 <Fa
@@ -119,7 +119,7 @@
                                         <a
                                             class="level-item"
                                             href="https://www.linkedin.com/in/valentin-burgaud-72bb451a2/"
-                                            alt="Lien Linkedin Valentin BURGAUD"
+                                            alt="Accéder au profil Linkedin de Valentin BURGAUD"
                                         >
                                             <span class="icon is-medium">
                                                 <Fa
@@ -131,7 +131,7 @@
                                         <a
                                             class="level-item"
                                             href="https://github.com/Xharos/sciences2i"
-                                            alt="Lien Github de ce projet"
+                                            alt="Découvrir le dépôt github de ce projet"
                                         >
                                             <span class="icon is-medium">
                                                 <Fa

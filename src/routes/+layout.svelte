@@ -22,7 +22,7 @@
     <div class="navbar-brand">
         <a class="navbar-item" href="/">
             <img
-                src="$lib/assets/favicon_32x32.webp"
+                src="$lib/assets/favicon_64x64.webp"
                 alt="Logo principale sciences-2i, lien page accueil"
                 width="32"
                 height="32"
@@ -63,7 +63,7 @@
                 <a
                     class="icon-text"
                     href="https://www.youtube.com/channel/UC197VifUbGS9iqCiYUe0hSA"
-                    alt="Lien chaîne Youtube Valentin Burgaud"
+                    alt="Poursuivre vers la chaîne Youtube de Valentin Burgaud"
                 >
                     <span class="icon">
                         <Fa icon={faYoutube} primaryColor="#FF0000" />
@@ -75,7 +75,7 @@
                 <a
                     class="icon-text"
                     href="https://github.com/Xharos/sciences2i"
-                    alt="Lien Github de ce site"
+                    alt="Accéder au stockage sur github de ce site"
                 >
                     <span class="icon">
                         <Fa icon={faGithub} primaryColor="#171515" />
@@ -97,8 +97,7 @@
             </div>
             <div class="column is-9 has-text-centered">
                 <small class="text-light" />
-                <span class="tag is-primary is-light">2023-{date}</span> | Valentin
-                BURGAUD
+                <span class="tag is-primary">2023-{date}</span> | Valentin BURGAUD
             </div>
         </div>
     </div>
