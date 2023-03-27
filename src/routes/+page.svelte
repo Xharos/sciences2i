@@ -77,8 +77,10 @@
                                 <p class="image is-64x64">
                                     <img
                                         class="is-rounded"
-                                        src="$lib/assets/profil.jpg"
+                                        src="$lib/assets/profil.webp"
                                         alt="photo de profil"
+                                        width="256"
+                                        height="256"
                                     />
                                 </p>
                             </figure>

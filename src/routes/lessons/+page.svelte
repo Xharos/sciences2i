@@ -47,8 +47,10 @@
                         <a href="/lessons/elec">
                             <figure class="image is-4by3">
                                 <img
-                                    src="$lib/assets/elec.jpg"
+                                    src="$lib/assets/elec.webp"
                                     alt="Cours de génie électrique"
+                                    width="1280"
+                                    height="960"
                                 />
                             </figure>
                         </a>
@@ -102,8 +104,10 @@
                         <a href="/lessons/meca">
                             <figure class="image is-4by3">
                                 <img
-                                    src="$lib/assets/meca.jpg"
+                                    src="$lib/assets/meca.webp"
                                     alt="Cours de génie mécanique"
+                                    width="1280"
+                                    height="960"
                                 />
                             </figure>
                         </a>
@@ -154,8 +158,10 @@
                         <a href="/lessons/info">
                             <figure class="image is-4by3">
                                 <img
-                                    src="$lib/assets/info.jpg"
+                                    src="$lib/assets/info.webp"
                                     alt="Cours de génie informatique"
+                                    width="1280"
+                                    height="960"
                                 />
                             </figure>
                         </a>
