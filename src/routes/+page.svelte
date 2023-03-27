@@ -188,6 +188,8 @@
                             alt="Licence Creative Commons"
                             style="border-width:0"
                             src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"
+                            width="88"
+                            height="31"
                         />
                     </a><br />
                     L'ensemble des documents présents sur ce site sont mis à disposition
