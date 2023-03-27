@@ -7,7 +7,9 @@ const config = {
     kit: {
         // Consult https://kit.svelte.dev/docs/integrations#preprocessors
         // for more information about preprocessors
-        adapter: adapter()
+        adapter: adapter({
+            precompress: false
+        })
     },
 
     preprocess: [

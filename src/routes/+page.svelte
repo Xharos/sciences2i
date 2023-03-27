@@ -54,7 +54,7 @@
                         <p>
                             Ce site recense mes années d'expériences en
                             enseignement des sciences de l'ingénieur. Il est
-                            destiné tout particuliérement aux élèves et aux
+                            destiné tout particulièrement aux élèves et aux
                             professeurs des classes de l'enseignement supérieur.
                         </p>
                         <p>
@@ -107,8 +107,9 @@
                                         <a
                                             class="level-item"
                                             href="https://www.youtube.com/channel/UC197VifUbGS9iqCiYUe0hSA"
+                                            alt="Lien Youtube Valentin BURGAUD"
                                         >
-                                            <span class="icon is-small">
+                                            <span class="icon is-medium">
                                                 <Fa
                                                     icon={faYoutube}
                                                     primaryColor="#FF0000"
@@ -118,8 +119,9 @@
                                         <a
                                             class="level-item"
                                             href="https://www.linkedin.com/in/valentin-burgaud-72bb451a2/"
+                                            alt="Lien Linkedin Valentin BURGAUD"
                                         >
-                                            <span class="icon is-small">
+                                            <span class="icon is-medium">
                                                 <Fa
                                                     icon={faLinkedin}
                                                     primaryColor="#0077B5"
@@ -128,17 +130,17 @@
                                         </a>
                                         <a
                                             class="level-item"
-                                            href="https://github.com/Xharos"
+                                            href="https://github.com/Xharos/sciences2i"
+                                            alt="Lien Github de ce projet"
                                         >
-                                            <span class="icon is-small">
+                                            <span class="icon is-medium">
                                                 <Fa
                                                     icon={faGithub}
                                                     primaryColor="#171515 "
                                                 />
                                             </span>
                                         </a>
-                                        <span
-                                            class="tag is-primary is-light is-rounded"
+                                        <span class="tag is-primary is-rounded"
                                             >2023...</span
                                         >
                                     </div>

@@ -38,6 +38,8 @@ body {
     flex-direction: column;
 }
 
+@font-face {}
+
 #wrapper {
     flex: 1;
     display: flex;
@@ -92,6 +94,7 @@ a.menu-label {
     font-weight: bold;
 }
 
-h1, h2 {
+h1,
+h2 {
     padding-top: 70px;
 }
