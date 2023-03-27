@@ -1,7 +1,7 @@
 <script>
     import Fa from "svelte-fa";
     import { onMount } from "svelte";
-    import YouTube from "svelte-youtube";
+    import YouTube from "svelte-youtube-embed";
     import {
         faYoutube,
         faLinkedin,
@@ -170,7 +170,7 @@
                     {#each latestIds as id}
                         <div class="column is-4">
                             <div class="video-responsive">
-                                <YouTube videoId={id} />
+                                <YouTube {id} />
                             </div>
                         </div>
                     {/each}
