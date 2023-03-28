@@ -24,8 +24,6 @@
             <img
                 src="$lib/assets/favicon_64x64.webp"
                 alt="Logo principale sciences-2i, lien page accueil"
-                width="32"
-                height="32"
             />
         </a>
 
