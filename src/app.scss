@@ -19,7 +19,7 @@
     color: #ECF0F3;
     background-color: #ffffff;
 
-    font-synthesis: none;
+    font-synthesis: weight;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -93,7 +93,24 @@ a.menu-label {
     font-weight: bold;
 }
 
-h1,
-h2 {
-    padding-top: 80px;
+[id]::before {
+    content: '';
+    display: block;
+    height: 80px;
+    margin-top: -80px;
+    visibility: hidden;
+}
+
+.content h1,
+.content h2 {
+    color: $primary;
+}
+
+strong {
+    color: $primary;
+    font-weight: bold;
+}
+
+.katex {
+    font-size: 1.1em;
 }

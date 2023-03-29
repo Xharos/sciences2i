@@ -81,6 +81,8 @@
     export let progress = 0;
     export let visible = false;
     export let url = "/";
+    export let lastDate = "29/03/2023";
+    export let author = "Valentin";
 
     let outer;
     let foreground;
@@ -202,6 +204,10 @@
                 <slot name="background" />
                 <aside class="menu">
                     <p class="menu-label">Table des matières</p>
+                    <div class="tags has-addons">
+                        <span class="tag">Date</span>
+                        <span class="tag is-primary">{lastDate}</span>
+                    </div>
                     <div class="columns">
                         <div class="column is-11">
                             <progress
@@ -212,16 +218,6 @@
                             >
                         </div>
                     </div>
-
-                    <!-- 
-							<li>Section {index + 1} is currently active.</li>
-							<li>
-								Offset in section {Math.round(offset * 100) / 100}
-							</li>
-							<li>
-								Total progress {Math.round(progress * 100) / 100}
-							</li> 
-						-->
                     {#each titles as title, i}
                         {#if title[1] === "H1"}
                             <a href={url + "#" + title[2]} class="menu-label"
