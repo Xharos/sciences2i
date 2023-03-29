@@ -4,7 +4,7 @@
 
 ---
 
-## Développement
+## Installation et développement
 
 Une fois les dépendances installés `npm install` (où `pnpm install` où `yarn`), démarrer un serveur de test :
 
@@ -15,9 +15,23 @@ npm run dev
 npm run dev -- --open
 ```
 
+## Documentation
+
+Une documentation sur comment ajouter du contenu et la liste des éléments svelte personnalisés crée est disponible sur le [wiki du projet](https://github.com/Xharos/sciences2i/wiki/Accueil).
+
+## Technologies
+
+Ce projet est un site statique, compilé par le framework [svelte-kit](https://svelte.dev/).
+Il utilise de plus en principaux modules JS :
+- [Katex](https://katex.org/) pour afficher le mode maths ;
+- [Chart](https://www.chartjs.org/) pour afficher des courbes interactives ;
+- [Font Awesome](https://fontawesome.com/) pour les logos.
+
+Et en framework front end [Bulma](https://github.com/jgthms/bulma).
+
 ## Accès
 
-Le site est hébergé en static sur netlify, accessible via l'url [sciences-2i](https://sciences-2i.fr).
+Le site est hébergé en statique sur netlify, accessible via l'url [sciences-2i](https://sciences-2i.fr).
 
 ## License
 
