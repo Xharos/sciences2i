@@ -1,5 +1,9 @@
 <script>
-    import { faSliders } from "@fortawesome/free-solid-svg-icons";
+    import {
+        faBolt,
+        faPersonChalkboard,
+    } from "@fortawesome/free-solid-svg-icons";
+    import Fa from "svelte-fa";
 </script>
 
 <svelte:head>
@@ -10,78 +14,53 @@
     />
 </svelte:head>
 
-<div class="sections">
-    <div class="toc-container">
-        <div class="columns">
-            <div class="column is-2 is-hidden-mobile">
-                <nav class="section-nav">
-                    <aside class="menu">
-                        <p class="menu-label">General</p>
-                        <ul class="menu-list">
-                            <li><a>Dashboard</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                            <li><a>Customers</a></li>
-                        </ul>
-                    </aside>
-                </nav>
+<div class="columns is-centered">
+    <div class="column is-11">
+        <section class="section">
+            <div class="content">
+                <span class="icon-text is-size-3 has-text-primary">
+                    <span class="icon">
+                        <Fa icon={faBolt} />
+                    </span>
+                    <span class="space">Génie électrique</span>
+                </span>
             </div>
-            <div class="column">
-                <section class="lesson">
-                    This is the first section.
-                    <h1 id="t1">
-                        Titre 1 qui est bien long pour tester le saut de ligne
-                    </h1>
-                    <h2 id="s1">Section 11</h2>
-                </section>
+            <nav class="breadcrumb" aria-label="breadcrumbs">
+                <ul>
+                    <li>
+                        <a href="/lessons">
+                            <span class="icon is-small is-primary">
+                                <Fa icon={faPersonChalkboard} />
+                            </span>
+                            <span>Cours</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/lessons/elec" aria-current="page">
+                            <span class="icon is-small is-primary">
+                                <Fa icon={faBolt} />
+                            </span>
+                            Électricité
+                        </a>
+                    </li>
+                    <li class="is-active">
+                        <a
+                            href="/lessons/elec/electrokinetic"
+                            aria-current="page"
+                        >
+                            Électrotechnique
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="content">
+                <p>
+                    Le terme électrotechnique désigne l'étude des applications
+                    techniques de l'électricité ou encore, la discipline qui
+                    étudie la production, le transport, le traitement, la
+                    transformation et l'utilisation de l'énergie électrique.
+                </p>
             </div>
-        </div>
+        </section>
     </div>
 </div>
-
-<style>
-    h1,
-    h2 {
-        height: 80vh;
-    }
-
-    div.toc-container > div > div > nav {
-        position: sticky;
-        top: 5rem;
-        align-self: start;
-    }
-
-    div.toc-container {
-        display: grid;
-        grid-template-columns: 1fr 0em;
-        max-width: 100em;
-        width: 100%;
-        margin: 0 auto;
-    }
-</style>

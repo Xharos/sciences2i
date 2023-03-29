@@ -13,29 +13,32 @@
 </svelte:head>
 
 <Scroller {url}>
+    <div slot="background" />
     <div slot="foreground">
-        <div class="columns">
-            <div class="column is-10 is-offset-2">
-                <section class="lesson">
-                    This is the first section.
-                    <a href="#t1">
-                        Jump to the part of the page with the “anchor-name” id
-                    </a>
-                    <h1 id="t1">
-                        Titre 1 qui est bien long pour tester le saut de ligne
-                    </h1>
-                    <h2 id="s1">Section 11</h2>
-                    <h3>Sous section 111</h3>
-                    <h3>Sous section 211</h3>
-                    <h2 id="s2">Section 21</h2>
-                    <h3>Sous section 112</h3>
-                    <h1 id="t2">Titre 2</h1>
-                    <h2 id="s21">Section 12</h2>
-                    <h2 id="s22">Section 22</h2>
-                    <h2 id="s23">Section 32</h2>
-                </section>
-            </div>
-        </div>
+        <section class="lesson">
+            This is the first section.
+            <h1 id="t1">
+                Titre 1 qui est bien long pour tester le saut de ligne
+            </h1>
+            <h2 id="s11">Section 11</h2>
+            <h2 id="s21">Section 21</h2>
+            <h1 id="t2">Titre 2</h1>
+            <h2 id="s12">Section 12</h2>
+            <h2 id="s22">Section 22</h2>
+            <h2 id="s32">Section 32</h2>
+            <h1 id="t3">Titre 3</h1>
+            <h2 id="s13">Section 13</h2>
+            <h2 id="s23">Section 23</h2>
+            <h2 id="s33">Section 33</h2>
+            <h1 id="t4">Titre 4</h1>
+            <h2 id="s14">Section 14</h2>
+            <h2 id="s24">Section 24</h2>
+            <h2 id="s34">Section 34</h2>
+            <h1 id="t5">Titre 5</h1>
+            <h2 id="s15">Section 15</h2>
+            <h2 id="s25">Section 25</h2>
+            <h2 id="s35">Section 35</h2>
+        </section>
     </div>
 </Scroller>
 
