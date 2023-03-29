@@ -12,5 +12,4 @@
 
 <section class="section">
     <h1 class="title">Test</h1>
-    <h2 class="subtitle">youhou</h2>
 </section>

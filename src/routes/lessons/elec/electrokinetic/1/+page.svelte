@@ -186,7 +186,7 @@
                     /> ;
                 </li>
                 <li>
-                    1000 <K math={"A"} /> environ dans le slignes de distributions
+                    1000 <K math={"A"} /> environ dans les lignes de distributions
                     ;
                 </li>
                 <li>
