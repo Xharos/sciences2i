@@ -1,13 +1,9 @@
 <script>
-    import Fa from "svelte-fa";
-    import { onMount } from "svelte";
+    import {onMount} from "svelte";
     import YouTube from "svelte-youtube-embed";
-    import {
-        faYoutube,
-        faLinkedin,
-        faGithub,
-    } from "@fortawesome/free-brands-svg-icons";
-    import { faScrewdriverWrench } from "@fortawesome/free-solid-svg-icons";
+    import {faGithub, faLinkedin, faYoutube,} from "@fortawesome/free-brands-svg-icons";
+    import {faScrewdriverWrench} from "@fortawesome/free-solid-svg-icons";
+    import Fa from "svelte-fa";
 
     let latestIds = [];
 
@@ -33,6 +29,14 @@
     });
 </script>
 
+<svelte:head>
+    <title>Sciences 2I</title>
+    <meta
+            content="Cours, fiches et tutoriels pour l'enseignement des sciences industrielles de l'ingénieur dans l'enseignement supérieur."
+            name="description"
+    />
+</svelte:head>
+
 <!-- svelte-ignore a11y-img-redundant-alt -->
 <div class="columns is-centered">
     <div class="column is-11">
@@ -40,7 +44,7 @@
             <div class="wrapper-test">
                 <div class="icon-text is-size-3 has-text-primary">
                     <span class="icon">
-                        <Fa icon={faScrewdriverWrench} />
+                        <Fa icon={faScrewdriverWrench}/>
                     </span>
                     <span class="space">S2I</span>
                 </div>
@@ -74,11 +78,11 @@
                         <figure class="media-left">
                             <p class="image is-64x64">
                                 <img
-                                    class="is-rounded"
-                                    src="$lib/assets/profil.webp"
-                                    alt="photo de profil"
-                                    width="256"
-                                    height="256"
+                                        alt="photo de profil"
+                                        class="is-rounded"
+                                        height="256"
+                                        src="$lib/assets/profil.webp"
+                                        width="256"
                                 />
                             </p>
                         </figure>
@@ -89,11 +93,11 @@
                                         BURGAUD Valentin
                                     </tag>
                                     <tag
-                                        class="has-text-primary is-size-7 is-italic"
+                                            class="has-text-primary is-size-7 is-italic"
                                     >
                                         burgaud.valentin@ens-rennes.fr
                                     </tag>
-                                    <br />
+                                    <br/>
                                     Étudiant à l'École Normale Supérieure de Rennes,
                                     je prépare le parcours enseignement à l'agrégation
                                     de sciences industrielles option génie électrique.
@@ -102,38 +106,38 @@
                             <nav class="level is-mobile">
                                 <div class="level-left">
                                     <a
-                                        class="level-item"
-                                        href="https://www.youtube.com/channel/UC197VifUbGS9iqCiYUe0hSA"
-                                        alt="Poursuivre vers la chaîne youtube de Valentin BURGAUD"
+                                            alt="Poursuivre vers la chaîne youtube de Valentin BURGAUD"
+                                            class="level-item"
+                                            href="https://www.youtube.com/channel/UC197VifUbGS9iqCiYUe0hSA"
                                     >
                                         <span class="icon is-medium">
                                             <Fa
-                                                icon={faYoutube}
-                                                primaryColor="#FF0000"
+                                                    icon={faYoutube}
+                                                    primaryColor="#FF0000"
                                             />
                                         </span>
                                     </a>
                                     <a
-                                        class="level-item"
-                                        href="https://www.linkedin.com/in/valentin-burgaud-72bb451a2/"
-                                        alt="Accéder au profil Linkedin de Valentin BURGAUD"
+                                            alt="Accéder au profil Linkedin de Valentin BURGAUD"
+                                            class="level-item"
+                                            href="https://www.linkedin.com/in/valentin-burgaud-72bb451a2/"
                                     >
                                         <span class="icon is-medium">
                                             <Fa
-                                                icon={faLinkedin}
-                                                primaryColor="#0077B5"
+                                                    icon={faLinkedin}
+                                                    primaryColor="#0077B5"
                                             />
                                         </span>
                                     </a>
                                     <a
-                                        class="level-item"
-                                        href="https://github.com/Xharos/sciences2i"
-                                        alt="Découvrir le dépôt github de ce projet"
+                                            alt="Découvrir le dépôt github de ce projet"
+                                            class="level-item"
+                                            href="https://github.com/Xharos/sciences2i"
                                     >
                                         <span class="icon is-medium">
                                             <Fa
-                                                icon={faGithub}
-                                                primaryColor="#171515 "
+                                                    icon={faGithub}
+                                                    primaryColor="#171515 "
                                             />
                                         </span>
                                     </a>
@@ -154,7 +158,7 @@
         <div class="content">
             <span class="icon-text is-size-5 has-text-primary">
                 <span class="icon">
-                    <Fa icon={faYoutube} primaryColor="#FF0000" />
+                    <Fa icon={faYoutube} primaryColor="#FF0000"/>
                 </span>
                 <span>Dernières vidéos youtube</span>
             </span>
@@ -164,7 +168,7 @@
                 {#each latestIds as id}
                     <div class="column is-4">
                         <div class="video-responsive">
-                            <YouTube {id} />
+                            <YouTube {id}/>
                         </div>
                     </div>
                 {/each}
@@ -175,22 +179,22 @@
         <div class="content">
             <blockquote class="is-primary">
                 <a
-                    rel="license"
-                    href="http://creativecommons.org/licenses/by-nc/4.0/"
+                        href="http://creativecommons.org/licenses/by-nc/4.0/"
+                        rel="license"
                 >
                     <img
-                        alt="Licence Creative Commons"
-                        style="border-width:0"
-                        src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"
-                        width="88"
-                        height="31"
+                            alt="Licence Creative Commons"
+                            height="31"
+                            src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"
+                            style="border-width:0"
+                            width="88"
                     />
-                </a><br />
+                </a><br/>
                 L'ensemble des documents présents sur ce site sont mis à disposition
                 selon les termes de la
                 <a
-                    rel="license"
-                    href="http://creativecommons.org/licenses/by-nc/4.0/"
+                        href="http://creativecommons.org/licenses/by-nc/4.0/"
+                        rel="license"
                 >
                     Licence Creative Commons Attribution - Pas d'Utilisation
                     Commerciale 4.0 International
