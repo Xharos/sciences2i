@@ -9,7 +9,7 @@
 
     let url = "/lessons/elec/electrokinetic/1";
     let lastDate = "29/03/2023";
-    let title = "Lois dans l'ARQS";
+    let title = "Condo et bobine";
 </script>
 
 <svelte:head>
