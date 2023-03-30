@@ -51,8 +51,8 @@
             </div>
         </div>
 
-        <div class="columns">
-            <div class="column is-7">
+        <div class="columns is-desktop">
+            <div class="column is-12-tablet is-7-desktop">
                 <div class="content">
                     <p>
                         Ce site recense mes années d'expériences en enseignement
