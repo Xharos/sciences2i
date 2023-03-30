@@ -5,6 +5,12 @@
     import {faScrewdriverWrench} from "@fortawesome/free-solid-svg-icons";
     import Fa from "svelte-fa";
 
+    import Store from '$lib/components/Store.js';
+
+    Store.update((_) => {
+        return '';
+    });
+
     let latestIds = [];
 
     onMount(async () => {

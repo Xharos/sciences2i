@@ -2,6 +2,7 @@
     import "../app.scss";
     import Fa from "svelte-fa";
     import {faYoutube, faGithub} from "@fortawesome/free-brands-svg-icons";
+    import {page} from '$app/stores';
 
     let bActive = false;
     let date = new Date().getFullYear();
@@ -32,9 +33,12 @@
 
     <div class={bActive ? "navbar-menu is-active" : "navbar-menu"} id="navMenu">
         <div class="navbar-start">
-            <a class="navbar-item" href="/lessons"> Cours </a>
-            <a class="navbar-item" href="/cards"> Fiches </a>
-            <a class="navbar-item" href="/tutorials"> Tutoriels </a>
+            <a class="navbar-item" class:is-selected={$page.url.pathname.startsWith('/lessons')} href="/lessons">
+                Cours </a>
+            <a class="navbar-item" class:is-selected={$page.url.pathname.startsWith('/cards')} href="/cards">
+                Fiches </a>
+            <a class="navbar-item" class:is-selected={$page.url.pathname.startsWith('/tutorials')} href="/tutorials">
+                Tutoriels </a>
         </div>
     </div>
 </nav>
