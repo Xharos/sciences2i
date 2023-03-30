@@ -39,10 +39,8 @@
                     remplacer un cours construit dans un référentiel précis.
                 </blockquote>
             </div>
-        </section>
-        <section class="section">
-            <div class="columns">
-                <div class="column is-4 has-text-centered">
+            <div class="columns is-desktop">
+                <div class="column is-12-tablet is-4-desktop has-text-centered">
                     <a href="/lessons/elec">
                         <div class="card">
                             <div class="card-image">
@@ -101,7 +99,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="column is-4 has-text-centered">
+                <div class="column is-12-tablet is-4-desktop has-text-centered">
                     <a href="/lessons/meca">
                         <div class="card">
                             <div class="card-image">
@@ -157,7 +155,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="column is-4 has-text-centered">
+                <div class="column is-12-tablet is-4-desktop has-text-centered">
                     <a href="/lessons/info">
                         <div class="card">
                             <div class="card-image">
