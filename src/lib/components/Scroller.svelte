@@ -253,12 +253,15 @@
         display: grid;
         grid-template-columns: 1fr 0em;
         max-width: 100em;
+        position: relative;
         width: 100%;
         margin: 0 auto;
     }
 
     svelte-scroller-background {
         position: sticky;
+        position: -webkit-sticky;
+        display: block;
         top: 75px;
         align-self: start;
     }
