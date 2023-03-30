@@ -196,7 +196,7 @@
 
 <svelte-scroller-outer bind:this={outer}>
     <div class="columns">
-        <div class="column is-2 is-hidden-mobile">
+        <div class="column is-2 is-hidden-touch">
             <svelte-scroller-background
                 bind:this={background}
                 style:top="{calc}px"
