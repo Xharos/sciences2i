@@ -10,108 +10,112 @@
 @import "bulma/sass/layout/_all";
 
 :root {
-    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 400;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
 
-    color-scheme: light dark;
-    color: #ECF0F3;
-    background-color: #ffffff;
+  color-scheme: light dark;
+  color: #ECF0F3;
+  background-color: #ffffff;
 
-    font-synthesis: weight;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
+  font-synthesis: weight;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 
 html,
 body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    height: 100%;
-    background: #ffffff;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    scroll-behavior: smooth;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  height: 100%;
+  background: #ffffff;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  scroll-behavior: smooth;
 }
 
 #wrapper {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar-item,
 .navbar-link {
-    padding: 0.5rem 1rem;
-    font-size: 22px;
-    line-height: 2.2
+  padding: 0.5rem 1rem;
+  font-size: 22px;
+  line-height: 2.2
+}
+
+.navbar-item.is-selected {
+  color: $primary;
+  font-weight: bold;
 }
 
 footer {
-    margin-top: auto;
+  margin-top: auto;
 }
 
 .video-responsive {
-    overflow: hidden;
-    padding-bottom: 56.25%;
-    position: relative;
-    height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
 }
 
 .video-responsive iframe {
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
 .content blockquote.is-primary {
-    background-color: lighten($primary, 64%);
-    ;
-    color: $primary;
-    border-color: $primary;
+  background-color: lighten($primary, 64%);;
+  color: $primary;
+  border-color: $primary;
 }
 
 .content blockquote.is-primary.is-light {
-    background-color: #ffffff;
-    color: $secondary;
-    border-color: $primary;
+  background-color: #ffffff;
+  color: $secondary;
+  border-color: $primary;
 }
 
 .space {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 p.menu-label,
 a.menu-label {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 [id]::before {
-    content: '';
-    display: block;
-    height: 80px;
-    margin-top: -80px;
-    visibility: hidden;
+  content: '';
+  display: block;
+  height: 80px;
+  margin-top: -80px;
+  visibility: hidden;
 }
 
 .content h1,
 .content h2 {
-    color: $primary;
-    line-height: 30px;
+  color: $primary;
+  line-height: 30px;
 }
 
 strong {
-    color: $primary;
-    font-weight: bold;
+  color: $primary;
+  font-weight: bold;
 }
 
 .katex {
-    font-size: 1.1em;
+  font-size: 1.1em;
 }
