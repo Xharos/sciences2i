@@ -31,7 +31,7 @@
 <Scroller {crumbs} {lastCrumb} {lastDate} {title} {url}>
     <div slot="background"/>
     <div slot="foreground">
-        <h1 id="t1">I La bobine</h1>
+        <h1>I La bobine</h1>
         <p>
             Des expériences datant de la fin du XIXème siècle ont conduit à
             une interprétation de la matière en termes de particules
@@ -40,7 +40,7 @@
             positives (retrait d'électrons du corps électrisé) et les
             charges négatives (apport d'électrons au corps électrisé).
         </p>
-        <h2 id="s11">I.1 Mise en évidence des porteurs de charge</h2>
+        <h2>I.1 Mise en évidence des porteurs de charge</h2>
         <article class="message is-primary">
             <div class="message-header">
                 <p>A retenir</p>
@@ -61,7 +61,7 @@
                 ).
             </div>
         </article>
-        <h2 id="s21">I.2 Mouvement d'ensemble ordonné ?</h2>
+        <h2>I.2 Mouvement d'ensemble ordonné ?</h2>
         <p>
             Dans un circuit ouvert, aucun courant ne circule et pourtant les
             électrons qui composent les fils sont mobiles avec une vitesse
@@ -108,7 +108,7 @@
                 réalisation d'une réaction chimique non spontanée.
             </li>
         </ul>
-        <h2 id="s21">I.3 Le courant électrique</h2>
+        <h2>I.3 Le courant électrique</h2>
         <article class="message is-primary">
             <div class="message-header">
                 <p>Définition</p>
@@ -123,14 +123,14 @@
             </div>
         </article>
 
-        <h1 id="t2">II Les grandeurs électriques</h1>
+        <h1>II Les grandeurs électriques</h1>
         <p>
             Dans ce paragraphe, on se place en régime permanent (ou
             stationnaire), les grandeurs électriques ne dépendent pas de la
             variable temps
             <K math={"t"}/>
         </p>
-        <h2 id="s12">II.1 L'intensité du courant électrique</h2>
+        <h2>II.1 L'intensité du courant électrique</h2>
         <article class="message is-primary">
             <div class="message-header">
                 <p>Définition</p>
@@ -189,7 +189,7 @@
                 pour la foudre.
             </li>
         </ul>
-        <h2 id="s22">II.2 La tension électrique</h2>
+        <h2>II.2 La tension électrique</h2>
         <article class="message is-primary">
             <div class="message-header">
                 <p>Définition</p>
@@ -234,7 +234,7 @@
                 ;
             </li>
         </ul>
-        <h2 id="s23">II.3 Mesure d'une intensité et d'une tension</h2>
-        <h2 id="s24">II.4 Référence de potentiel</h2>
+        <h2>II.3 Mesure d'une intensité et d'une tension</h2>
+        <h2>II.4 Référence de potentiel</h2>
     </div>
 </Scroller>

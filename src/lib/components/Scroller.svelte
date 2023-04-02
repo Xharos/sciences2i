@@ -133,8 +133,28 @@
             titles[i] = [
                 titlesDOM[i].outerText,
                 titlesDOM[i].nodeName,
-                titlesDOM[i].id,
+                `section-${i + 1}`,
             ];
+            const container = document.createElement('div');
+            container.id = `section-${i + 1}`;
+
+            const innerContainer = document.createElement('div');
+            innerContainer.classList.add("inner");
+
+            const titleInnerContainer = document.createElement('div');
+            titleInnerContainer.classList.add("title-link-container");
+
+            titlesDOM[i].removeAttribute("id");
+
+            titlesDOM[i].parentNode.insertBefore(container, titlesDOM[i]);
+            container.appendChild(innerContainer);
+            innerContainer.appendChild(titleInnerContainer);
+
+            const link = document.createElement('a');
+            link.href = `#section-${i + 1}`;
+            link.textContent = '#';
+            titleInnerContainer.appendChild(link);
+            titleInnerContainer.appendChild(titlesDOM[i]);
         }
 
         count = sections.length;

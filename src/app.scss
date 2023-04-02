@@ -97,12 +97,29 @@ a.menu-label {
   font-weight: bold;
 }
 
-[id]::before {
-  content: '';
+.inner {
+  position: relative;
+}
+
+.inner:before {
+  content: "";
   display: block;
-  height: 80px;
-  margin-top: -80px;
-  visibility: hidden;
+  height: 40px !important;
+  margin: -40px 0 0 !important;
+
+}
+
+.title-link-container {
+  display: flex;
+  align-items: center;
+}
+
+.title-link-container a {
+  margin-right: 10px;
+}
+
+.title-link-container h3 h2 h1 {
+  margin-right: 10px;
 }
 
 .content h1,
