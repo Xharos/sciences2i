@@ -43,8 +43,6 @@
 
 <Scroller {crumbs} {lastCrumb} {lastDate} {title} {url}>
     <div slot="foreground">
-        <div class="content">
-            <h1>Chapitre 1 </h1>
-        </div>
+        <h1>Chapitre 1 </h1>
     </div>
 </Scroller>

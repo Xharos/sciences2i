@@ -263,54 +263,55 @@
             </svelte-scroller-background>
         </div>
         <div class="column">
-            <svelte-scroller-foreground bind:this={foreground}>
-                <div class="content">
-                    <slot name="foreground"/>
-                    <h1 class="toc-exclude">Auteur</h1>
-                    <br/>
-                    <div class="columns is-centered">
-                        <div class="column is-9">
+            <div class="content">
+                <svelte-scroller-foreground bind:this={foreground}>
+                    <div class="content">
+                        <slot name="foreground"/>
+                        <h1 class="toc-exclude">Auteur</h1>
+                        <br/>
+                        <div class="columns is-centered">
+                            <div class="column is-9">
 
-                            <div class="box">
-                                <article class="media">
-                                    <figure class="media-left">
-                                        <p class="image is-64x64">
-                                            <img
-                                                    alt="photo de profil"
-                                                    class="is-rounded"
-                                                    height="256"
-                                                    src={auth.logo}
-                                                    width="256"
-                                            />
-                                        </p>
-                                    </figure>
-                                    <div class="media-content">
-                                        <div class="content">
-                                            <p>
-                                                <tag class="has-text-weight-bold">
-                                                    {auth.name}
-                                                </tag>
-                                                <tag
-                                                        class="has-text-primary is-size-7 is-italic"
-                                                >
-                                                    {auth.mail}
-                                                </tag>
-                                                <br/>
-                                                {auth.description}
+                                <div class="box">
+                                    <article class="media">
+                                        <figure class="media-left">
+                                            <p class="image is-64x64">
+                                                <img
+                                                        alt="photo de profil"
+                                                        class="is-rounded"
+                                                        height="256"
+                                                        src={auth.logo}
+                                                        width="256"
+                                                />
                                             </p>
+                                        </figure>
+                                        <div class="media-content">
+                                            <div class="content">
+                                                <p>
+                                                    <tag class="has-text-weight-bold">
+                                                        {auth.name}
+                                                    </tag>
+                                                    <tag
+                                                            class="has-text-primary is-size-7 is-italic"
+                                                    >
+                                                        {auth.mail}
+                                                    </tag>
+                                                    <br/>
+                                                    {auth.description}
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </article>
-                            </div>
+                                    </article>
+                                </div>
 
+                            </div>
                         </div>
                     </div>
-                </div>
-            </svelte-scroller-foreground>
+                </svelte-scroller-foreground>
+            </div>
         </div>
     </div>
-</svelte-scroller-outer
->
+</svelte-scroller-outer>
 
 <style>
     svelte-scroller-outer {
