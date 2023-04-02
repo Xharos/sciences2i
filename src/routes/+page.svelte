@@ -83,7 +83,7 @@
                                         alt="photo de profil"
                                         class="is-rounded"
                                         height="256"
-                                        src="$lib/assets/valentin.webp"
+                                        src={valentin.logo}
                                         width="256"
                                 />
                             </p>

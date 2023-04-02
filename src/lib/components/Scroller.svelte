@@ -264,7 +264,7 @@
                                                     alt="photo de profil"
                                                     class="is-rounded"
                                                     height="256"
-                                                    src="$lib/assets/valentin.webp"
+                                                    src={auth.logo}
                                                     width="256"
                                             />
                                         </p>
