@@ -3,8 +3,10 @@
     import YouTube from "svelte-youtube-embed";
     import {faGithub, faLinkedin, faYoutube,} from "@fortawesome/free-brands-svg-icons";
     import {faScrewdriverWrench} from "@fortawesome/free-solid-svg-icons";
+    import authors from "$lib/components/authors.js";
     import Fa from "svelte-fa";
 
+    let valentin = authors['valentin'];
     let latestIds = [];
 
     onMount(async () => {
@@ -81,7 +83,7 @@
                                         alt="photo de profil"
                                         class="is-rounded"
                                         height="256"
-                                        src="$lib/assets/profil.webp"
+                                        src={valentin.logo}
                                         width="256"
                                 />
                             </p>
@@ -90,17 +92,15 @@
                             <div class="content">
                                 <p>
                                     <tag class="has-text-weight-bold">
-                                        BURGAUD Valentin
+                                        {valentin.name}
                                     </tag>
                                     <tag
                                             class="has-text-primary is-size-7 is-italic"
                                     >
-                                        burgaud.valentin@ens-rennes.fr
+                                        {valentin.mail}
                                     </tag>
                                     <br/>
-                                    Étudiant à l'École Normale Supérieure de Rennes,
-                                    je prépare le parcours enseignement à l'agrégation
-                                    de sciences industrielles option génie électrique.
+                                    {valentin.description}
                                 </p>
                             </div>
                             <nav class="level is-mobile">
