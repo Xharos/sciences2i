@@ -251,7 +251,7 @@
             <svelte-scroller-foreground bind:this={foreground}>
                 <div class="content">
                     <slot name="foreground"/>
-                    <h1 id="author">Auteur</h1>
+                    <h1 class="toc-exclude">Auteur</h1>
                     <br/>
                     <div class="columns is-centered">
                         <div class="column is-9">
@@ -284,46 +284,6 @@
                                                 {auth.description}
                                             </p>
                                         </div>
-                                        <nav class="level is-mobile">
-                                            <div class="level-left">
-                                                <a
-                                                        alt="Poursuivre vers la chaîne youtube de Valentin BURGAUD"
-                                                        class="level-item"
-                                                        href="https://www.youtube.com/channel/UC197VifUbGS9iqCiYUe0hSA"
-                                                >
-                                        <span class="icon is-medium">
-                                            <Fa
-                                                    icon={faYoutube}
-                                                    primaryColor="#FF0000"
-                                            />
-                                        </span>
-                                                </a>
-                                                <a
-                                                        alt="Accéder au profil Linkedin de Valentin BURGAUD"
-                                                        class="level-item"
-                                                        href="https://www.linkedin.com/in/valentin-burgaud-72bb451a2/"
-                                                >
-                                        <span class="icon is-medium">
-                                            <Fa
-                                                    icon={faLinkedin}
-                                                    primaryColor="#0077B5"
-                                            />
-                                        </span>
-                                                </a>
-                                                <a
-                                                        alt="Découvrir le dépôt github de ce projet"
-                                                        class="level-item"
-                                                        href="https://github.com/Xharos/sciences2i"
-                                                >
-                                        <span class="icon is-medium">
-                                            <Fa
-                                                    icon={faGithub}
-                                                    primaryColor="#171515 "
-                                            />
-                                        </span>
-                                                </a>
-                                            </div>
-                                        </nav>
                                     </div>
                                 </article>
                             </div>
