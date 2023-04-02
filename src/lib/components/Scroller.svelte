@@ -69,6 +69,7 @@
     import authors from "$lib/components/authors.js";
     import {faGithub, faLinkedin, faYoutube} from "@fortawesome/free-brands-svg-icons";
     import Fa from "svelte-fa";
+    import Breadcrumb from "$lib/components/Breadcrumb.svelte";
 
     // config
     export let top = 0.12;
@@ -85,7 +86,12 @@
     export let visible = false;
     export let url = "/";
     export let lastDate = "29/03/2023";
+
+    export let crumbs = [];
+    export let lastCrumb = null;
     export let author = "valentin";
+
+    export let title;
     let auth = authors[author];
 
 
@@ -196,6 +202,15 @@
         }
     }
 </script>
+
+<div class="columns is-centered">
+    <div class="column is-11">
+        <Breadcrumb crumbs={crumbs} lastCrumb={lastCrumb}/>
+        <div class="content has-text-centered">
+            <h1>{title}</h1>
+        </div>
+    </div>
+</div>
 
 <svelte:window bind:innerHeight={wh}/>
 

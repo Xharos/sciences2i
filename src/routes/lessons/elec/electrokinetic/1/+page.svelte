@@ -1,15 +1,23 @@
 <script>
     import Scroller from "$lib/components/Scroller.svelte";
+    import {Crumbs} from '$lib/components/Crumbs.svelte';
     import K from "$lib/components/K.svelte";
-    import {
-        faBolt,
-        faPersonChalkboard,
-    } from "@fortawesome/free-solid-svg-icons";
-    import Fa from "svelte-fa";
 
     let url = "/lessons/elec/electrokinetic/1";
     let lastDate = "29/03/2023";
     let title = "Lois dans l'ARQS";
+
+    const crumbs = [
+        Crumbs.COURS,
+        Crumbs.ELECTRICITE,
+        Crumbs.ELECTROCINETIQUE,
+    ];
+
+    const lastCrumb = {
+        textKey: title,
+        link: null,
+        icon: null,
+    };
 </script>
 
 <svelte:head>
@@ -20,46 +28,7 @@
     />
 </svelte:head>
 
-<div class="columns is-centered">
-    <div class="column is-11">
-        <nav aria-label="breadcrumbs" class="breadcrumb">
-            <ul>
-                <li>
-                    <a href="/lessons">
-                        <span class="icon is-small is-primary">
-                            <Fa icon={faPersonChalkboard}/>
-                        </span>
-                        <span>Cours</span>
-                    </a>
-                </li>
-                <li>
-                    <a aria-current="page" href="/lessons/elec">
-                        <span class="icon is-small is-primary">
-                            <Fa icon={faBolt}/>
-                        </span>
-                        Électricité
-                    </a>
-                </li>
-                <li>
-                    <a aria-current="page" href="/lessons/elec/electrokinetic">
-                        Électrocinétique
-                    </a>
-                </li>
-                <li class="is-active">
-                    <a aria-current="page" href="/lessons/elec/electrokinetic">
-                        {title}
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <div class="content has-text-centered">
-            <h1>{title}</h1>
-        </div>
-    </div>
-</div>
-
-<Scroller {lastDate} {url}>
-    <div slot="background"/>
+<Scroller {crumbs} {lastCrumb} {lastDate} {title} {url}>
     <div slot="foreground">
         <h1 id="t1">I Le courant électrique</h1>
         <p>
