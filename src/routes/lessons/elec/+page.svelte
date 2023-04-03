@@ -3,7 +3,6 @@
     import {Crumbs} from '$lib/components/Crumbs.svelte';
     import {
         faBolt,
-        faPersonChalkboard,
     } from "@fortawesome/free-solid-svg-icons";
     import Fa from "svelte-fa";
 
