@@ -153,6 +153,7 @@
             const link = document.createElement('a');
             link.href = `#section-${i + 1}`;
             link.textContent = '#';
+            link.classList.add('link-translucent');
             titleInnerContainer.appendChild(link);
             titleInnerContainer.appendChild(titlesDOM[i]);
         }

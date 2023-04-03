@@ -2,9 +2,11 @@
     import {
         faBolt,
         faPersonChalkboard,
+        faPlug,
+        faChargingStation,
+        faTowerBroadcast,
     } from "@fortawesome/free-solid-svg-icons";
-    import Fa from "svelte-fa";
-    
+
     export const Crumbs = {
         COURS: {
             textKey: "cours",
@@ -12,14 +14,24 @@
             icon: faPersonChalkboard,
         },
         ELECTRICITE: {
-            textKey: "electricite",
+            textKey: "électricité",
             link: "/lessons/elec",
             icon: faBolt,
         },
+        ELECTRONIQUE: {
+            textKey: "électronique",
+            link: "/lessons/elec/electronic",
+            icon: faTowerBroadcast,
+        },
         ELECTROCINETIQUE: {
-            textKey: "electrocinetique",
+            textKey: "électrocinétique",
             link: "/lessons/elec/electrokinetic",
-            icon: faBolt,
+            icon: faPlug,
+        },
+        ELECTROTECHNIQUE: {
+            textKey: "électrotechnique",
+            link: "/lessons/elec/electrical",
+            icon: faChargingStation,
         },
     };
 </script>

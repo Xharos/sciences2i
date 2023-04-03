@@ -118,14 +118,32 @@ a.menu-label {
   margin-right: 10px;
 }
 
-.title-link-container h3 h2 h1 {
-  margin-right: 10px;
+.link-translucent {
+  opacity: 0.2;
+  transition: opacity 0.2s;
 }
 
-.content h1,
-.content h2 {
+div[slot="foreground"] > *:not([id^="section"]) {
+  margin-left: 30px;
+}
+
+div[slot="foreground"] ul {
+  list-style-position: inside;
+}
+
+.link-translucent:hover {
+  opacity: 1;
+}
+
+.content h1 {
   color: $primary;
   line-height: 30px;
+}
+
+.content h2 {
+  color: $secondary;
+  line-height: 20px;
+  font-size: 24px;
 }
 
 strong {
