@@ -3,6 +3,16 @@ $footer-padding: 1rem 1.5rem 1rem;
 $navbar-box-shadow-size: 0 1px 0 0;
 $content-heading-line-height: 0.8;
 
+// special component color
+$definition: hsl(209, 80%, 40%);
+$definition_light: lighten($definition, 55%);
+
+$property: hsl(138, 80%, 40%);
+$property_light: lighten($property, 55%);
+
+$remember: hsl(0, 80%, 40%);
+$remember_light: lighten($remember, 55%);
+
 $primary: hsl(209, 80%, 40%);
 $secondary: lighten($primary, 15%);
 $tertiary: lighten($primary, 55%);

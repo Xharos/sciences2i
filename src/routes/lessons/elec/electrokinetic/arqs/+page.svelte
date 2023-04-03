@@ -1,7 +1,8 @@
 <script>
-    import Scroller from "$lib/components/Scroller.svelte";
+    import Scroller from '$lib/components/Scroller.svelte';
     import {Crumbs} from '$lib/components/Crumbs.svelte';
-    import K from "$lib/components/K.svelte";
+    import Message from '$lib/components/MessageBox.svelte'
+    import K from '$lib/components/K.svelte';
 
     export let data;
     let title = "Lois dans l'ARQS";
@@ -41,26 +42,21 @@
             charges négatives (apport d'électrons au corps électrisé).
         </p>
         <h2>Mise en évidence des porteurs de charge</h2>
-        <article class="message is-primary">
-            <div class="message-header">
-                <p>A retenir</p>
-            </div>
-            <div class="message-body">
-                Les charges électriques observées sont toujours des
-                multiples entiers de la charge élémentaire
-                <K math={"e"}/>
-                .
-                On dit que la charge électrique est une grandeur quantifiée
-                ou discrète. La charge électrique est une grandeur
-                conservative. Pour un système fermé, c'est-à-dire
-                n'échangeant pas de matière avec l'extérieur, la charge
-                électrique reste constante. La charge électrique est
-                indépendante du référentiel d'étude. Son unité est le
-                Coulomb (
-                <K math={"C"}/>
-                ).
-            </div>
-        </article>
+        <Message title="A retenir" type="remember">
+            Les charges électriques observées sont toujours des
+            multiples entiers de la charge élémentaire
+            <K math={"e"}/>
+            .
+            On dit que la charge électrique est une grandeur quantifiée
+            ou discrète. La charge électrique est une grandeur
+            conservative. Pour un système fermé, c'est-à-dire
+            n'échangeant pas de matière avec l'extérieur, la charge
+            électrique reste constante. La charge électrique est
+            indépendante du référentiel d'étude. Son unité est le
+            Coulomb (
+            <K math={"C"}/>
+            ).
+        </Message>
         <h2>Mouvement d'ensemble ordonné ?</h2>
         <p>
             Dans un circuit ouvert, aucun courant ne circule et pourtant les
@@ -109,19 +105,12 @@
             </li>
         </ul>
         <h2>Le courant électrique</h2>
-        <article class="message is-primary">
-            <div class="message-header">
-                <p>Définition</p>
-            </div>
-            <div class="message-body">
-                <p>
-                    On appelle <strong>courant électrique</strong> tout mouvement
-                    d'ensemble ordonné de porteurs de charges. Par convention,
-                    le sens du courant est le sens de déplacement des charges
-                    positives (du plus vers le moins).
-                </p>
-            </div>
-        </article>
+        <Message title="Courant électrique" type="definition">
+            On appelle <strong>courant électrique</strong> tout mouvement
+            d'ensemble ordonné de porteurs de charges. Par convention,
+            le sens du courant est le sens de déplacement des charges
+            positives (du plus vers le moins).
+        </Message>
 
         <h1>Les grandeurs électriques</h1>
         <p>
@@ -131,31 +120,18 @@
             <K math={"t"}/>
         </p>
         <h2>L'intensité du courant électrique</h2>
-        <article class="message is-primary">
-            <div class="message-header">
-                <p>Définition</p>
-            </div>
-            <div class="message-body">
-                <p>
-                    On appelle <strong
-                >intensité d'un courant électrique</strong
-                >
-                    traversant la section
-                    <K math={"S"}/>
-                    d'un conducteur, la
-                    quantité de charges électriques traversant une section
-                    <K
-                            math={"S"}
-                    />
-                    par unité de temps, c'est-à-dire le débit de charges à
-                    travers cette section. Elle s'exprime en ampère (
-                    <K
-                            math={"A"}
-                    />
-                    ).
-                </p>
-            </div>
-        </article>
+        <Message title="Intensité électrique" type="definition">
+            On appelle <strong>intensité d'un courant électrique</strong>
+            traversant la section
+            <K math={"S"}/>
+            d'un conducteur, la
+            quantité de charges électriques traversant une section
+            <K math={"S"}/>
+            par unité de temps, c'est-à-dire le débit de charges à
+            travers cette section. Elle s'exprime en ampère (
+            <K math={"A"}/>
+            ).
+        </Message>
         <p>
             Quelques ordres de grandeurs de l'intensité du courant
             électrique :
@@ -172,9 +148,7 @@
                 usage domestique : de 1
                 <K math={"A"}/>
                 à 100
-                <K
-                        math={"A"}
-                />
+                <K math={"A"}/>
                 ;
             </li>
             <li>
@@ -190,29 +164,19 @@
             </li>
         </ul>
         <h2>La tension électrique</h2>
-        <article class="message is-primary">
-            <div class="message-header">
-                <p>Définition</p>
-            </div>
-            <div class="message-body">
-                <p>
-                    L'état électrique d'un point du circuit électrique est
-                    caractérisé par une grandeur appelée
-                    <strong>potentiel</strong> et noté
-                    <K math={"V"}/>
-                    qui s'exprime
-                    en volt. La tension entre A et B est la différence de potentiel
-                    entre les deux points A et B d'un circuit, et caractérise
-                    la tendance des électrons à se rendre d'un point à un autre.
-                    C'est une grandeur algébrique :
-                    <K
-                            displayMode
-                            math={"U_{AB} = V_A - V_B"}
-                    />
-                    qui se représente par une flèche orientée de B vers A.
-                </p>
-            </div>
-        </article>
+        <Message title="Tension" type="definition">
+            L'état électrique d'un point du circuit électrique est
+            caractérisé par une grandeur appelée
+            <strong>potentiel</strong> et noté
+            <K math={"V"}/>
+            qui s'exprime
+            en volt. La tension entre A et B est la différence de potentiel
+            entre les deux points A et B d'un circuit, et caractérise
+            la tendance des électrons à se rendre d'un point à un autre.
+            C'est une grandeur algébrique :
+            <K displayMode math={"U_{AB} = V_A - V_B"}/>
+            qui se représente par une flèche orientée de B vers A.
+        </Message>
         <p>Quelques ordres de grandeurs d'une tension électrique :</p>
         <ul>
             <li>
