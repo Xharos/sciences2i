@@ -7,9 +7,15 @@ $primary: hsl(209, 80%, 40%);
 $secondary: lighten($primary, 15%);
 $tertiary: lighten($primary, 55%);
 $quaternary: lighten($primary, 80%);
+
 $navbar-item-hover-color: $primary;
 $navbar-dropdown-arrow: $primary;
+
 $menu-label-color: $primary;
 $menu-item-color: $secondary;
 $menu-item-hover-color: $primary;
 $menu-item-hover-background-color: $tertiary;
+
+$pagination-current-background-color: $primary;
+$pagination-hover-color: $primary;
+$pagination-hover-border-color: $primary;

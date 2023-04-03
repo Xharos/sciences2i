@@ -50,10 +50,8 @@
     </div>
 </nav>
 <section class="hero">
-    <div class="hero-body">
-        <div class="box">
-            <slot/>
-        </div>
+    <div class="hero-body" style="padding: 2rem">
+        <slot/>
     </div>
 </section>
 

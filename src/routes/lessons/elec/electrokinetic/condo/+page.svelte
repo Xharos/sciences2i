@@ -3,9 +3,12 @@
     import {Crumbs} from '$lib/components/Crumbs.svelte';
     import K from "$lib/components/K.svelte";
 
-    let url = "/lessons/elec/electrokinetic/2";
-    let lastDate = "31/03/2023";
-    let title = "Condo et bobine";
+    export let data;
+    let title = "Condensateur et bobine, circuits RC et RL";
+
+    const [prevElement, element, nextElement] = data.getElement(title);
+    let url = element.link;
+    let lastDate = element.lastDate;
 
     const crumbs = [
         Crumbs.COURS,
@@ -15,8 +18,6 @@
 
     const lastCrumb = {
         textKey: title,
-        link: null,
-        icon: null,
     };
 </script>
 
@@ -28,7 +29,7 @@
     />
 </svelte:head>
 
-<Scroller {crumbs} {lastCrumb} {lastDate} {title} {url}>
+<Scroller {crumbs} {element} {lastCrumb} {lastDate} {nextElement} {prevElement} {title} {url}>
     <div slot="background"/>
     <div slot="foreground">
         <h1>I La bobine</h1>

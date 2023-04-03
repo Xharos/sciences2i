@@ -73,7 +73,7 @@
 
     // config
     export let top = 0.12;
-    export let bottom = 0.8;
+    export let bottom = 0.9;
     export let threshold = 0.5;
     export let query = "section";
     export let parallax = false;
@@ -90,6 +90,10 @@
     export let crumbs = [];
     export let lastCrumb = null;
     export let author = "valentin";
+
+    export let nextElement;
+    export let element;
+    export let prevElement;
 
     export let title;
     let auth = authors[author];
@@ -225,7 +229,7 @@
 </script>
 
 <div class="columns is-centered">
-    <div class="column is-11">
+    <div class="column is-12">
         <Breadcrumb crumbs={crumbs} lastCrumb={lastCrumb}/>
         <div class="content has-text-centered">
             <h1>{title}</h1>
@@ -242,45 +246,47 @@
                     bind:this={background}
                     style:top="{calc}px"
             >
-                <slot name="background"/>
-                <aside class="menu">
-                    <p class="menu-label">Table des matières</p>
-                    <div class="tags has-addons">
-                        <span class="tag">Date</span>
-                        <span class="tag is-primary">{lastDate}</span>
-                    </div>
-                    <div class="columns">
-                        <div class="column is-11">
-                            <progress
-                                    class="progress is-small is-primary"
-                                    max="1"
-                                    value={Math.round(progress * 100) / 100}
-                            >{Math.round(progress * 100) / 1}%
-                            </progress
-                            >
+                <div class="box" style="padding: 5px">
+                    <slot name="background"/>
+                    <aside class="menu">
+                        <p class="menu-label">Table des matières</p>
+                        <div class="tags has-addons">
+                            <span class="tag">Date</span>
+                            <span class="tag is-primary">{lastDate}</span>
                         </div>
-                    </div>
-                    {#each titles as title, i}
-                        {#if title[1] === "H1"}
-                            <a href={url + "#" + title[2]} class="menu-label"
-                            >{title[0]}</a
-                            >
-                            <ul class="menu-list">
-                                {#each titles.slice(i + 1, titles.indexOf(titles
-                                    .slice(i + 1, titles.length)
-                                    .find((obj) => obj[1] === "H1")) === -1 ? titles.length : titles.indexOf(titles
-                                    .slice(i + 1, titles.length)
-                                    .find((obj) => obj[1] === "H1"))) as section}
-                                    <li>
-                                        <a href={url + "#" + section[2]}
-                                        >{section[0]}</a
-                                        >
-                                    </li>
-                                {/each}
-                            </ul>
-                        {/if}
-                    {/each}
-                </aside>
+                        <div class="columns">
+                            <div class="column">
+                                <progress
+                                        class="progress is-small is-primary"
+                                        max="1"
+                                        value={Math.round(progress * 100) / 100}
+                                >{Math.round(progress * 100) / 1}%
+                                </progress
+                                >
+                            </div>
+                        </div>
+                        {#each titles as title, i}
+                            {#if title[1] === "H1"}
+                                <a href={url + "#" + title[2]} class="menu-label"
+                                >{title[0]}</a
+                                >
+                                <ul class="menu-list">
+                                    {#each titles.slice(i + 1, titles.indexOf(titles
+                                        .slice(i + 1, titles.length)
+                                        .find((obj) => obj[1] === "H1")) === -1 ? titles.length : titles.indexOf(titles
+                                        .slice(i + 1, titles.length)
+                                        .find((obj) => obj[1] === "H1"))) as section}
+                                        <li>
+                                            <a href={url + "#" + section[2]}
+                                            >{section[0]}</a
+                                            >
+                                        </li>
+                                    {/each}
+                                </ul>
+                            {/if}
+                        {/each}
+                    </aside>
+                </div>
             </svelte-scroller-background>
         </div>
         <div class="column">
@@ -329,6 +335,23 @@
                         </div>
                     </div>
                 </svelte-scroller-foreground>
+                <div class="section">
+                    <nav aria-label="pagination" class="pagination is-centered" role="navigation">
+                        {#if prevElement }
+                            <a class="pagination-previous" href={prevElement.link}>{prevElement.title}</a>
+                        {/if}
+                        {#if nextElement }
+                            <a class="pagination-next" href={nextElement.link}>{nextElement.title}</a>
+                        {/if}
+                        {#if element }
+                            <ul class="pagination-list">
+                                <li>
+                                    <p class="pagination-link is-current">{element.title}</p>
+                                </li>
+                            </ul>
+                        {/if}
+                    </nav>
+                </div>
             </div>
         </div>
     </div>
@@ -355,7 +378,7 @@
     svelte-scroller-foreground {
         display: block;
         position: relative;
-        /*z-index: 2;*/
+        /*z-index: condo;*/
     }
 
     svelte-scroller-foreground::after {
