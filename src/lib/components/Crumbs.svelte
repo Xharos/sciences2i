@@ -9,27 +9,27 @@
 
     export const Crumbs = {
         COURS: {
-            textKey: "cours",
+            textKey: "Cours",
             link: "/lessons",
             icon: faPersonChalkboard,
         },
         ELECTRICITE: {
-            textKey: "électricité",
+            textKey: "Électricité",
             link: "/lessons/elec",
             icon: faBolt,
         },
         ELECTRONIQUE: {
-            textKey: "électronique",
+            textKey: "Électronique",
             link: "/lessons/elec/electronic",
             icon: faTowerBroadcast,
         },
         ELECTROCINETIQUE: {
-            textKey: "électrocinétique",
+            textKey: "Électrocinétique",
             link: "/lessons/elec/electrokinetic",
             icon: faPlug,
         },
         ELECTROTECHNIQUE: {
-            textKey: "électrotechnique",
+            textKey: "Électrotechnique",
             link: "/lessons/elec/electrical",
             icon: faChargingStation,
         },

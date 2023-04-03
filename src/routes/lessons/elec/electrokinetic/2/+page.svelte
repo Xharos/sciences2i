@@ -66,7 +66,7 @@
             Dans un circuit ouvert, aucun courant ne circule et pourtant les
             électrons qui composent les fils sont mobiles avec une vitesse
             de
-            <K math={"10^{-5}\\space m.s^{-1}"}/>
+            <K math={"10^{-5}\\space m.s^{-arqs}"}/>
             (dépend de la température),
             mais de manière totalement désordonnée ce qui conduit à un déplacement
             moyen des électrons nuls. On parle
@@ -77,7 +77,7 @@
             mouvement d'ensemble ordonné et ils se déplacent avec une
             vitesse bien plus faible, de l'ordre de
             <K
-                    math={"10^{-4}\\space m.s^{-1}"}
+                    math={"10^{-4}\\space m.s^{-arqs}"}
             />
             . Le type de courant qui va nous intéresser est le
             <strong>de conduction</strong> dû au mouvement de porteurs de charges

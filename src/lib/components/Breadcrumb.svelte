@@ -4,13 +4,14 @@
     export let crumbs = [];
     export let lastCrumb = null;
 
+    const isLast = (index) => lastCrumb === null && index === crumbs.length - 1;
 </script>
 
 <nav aria-label="breadcrumbs" class="breadcrumb">
     <ul>
         {#each crumbs as crumb, index}
             {#if crumb}
-                <li>
+                <li class={isLast(index) ? "is-active" : ""}>
                     <a href="{crumb.link}">
                         {#if crumb.icon}
                             <span class="icon is-small is-primary">
