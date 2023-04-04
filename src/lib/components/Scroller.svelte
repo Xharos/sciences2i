@@ -361,11 +361,11 @@
     svelte-scroller-outer {
         display: grid;
         grid-template-columns: auto 1fr;
-        max-width: 100em;
+        max-width: 100%;
         position: relative;
         width: 100%;
         margin: 0 auto;
-        padding: 0 0; /* adjust as needed */
+        padding: 4em 0; /* adjust as needed */
     }
 
     svelte-scroller-background {
