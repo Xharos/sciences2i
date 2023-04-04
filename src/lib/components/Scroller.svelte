@@ -359,7 +359,6 @@
     svelte-scroller-outer {
         display: grid;
         grid-template-columns: auto auto;
-        max-width: 100em;
         position: relative;
         width: 100%;
         margin: 0 auto;
