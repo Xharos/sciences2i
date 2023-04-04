@@ -123,6 +123,10 @@ a.menu-label {
   transition: opacity 0.2s;
 }
 
+div[slot="foreground"] > *:not([id^="section"]) {
+  margin-left: 30px;
+}
+
 div[slot="foreground"] ul {
   list-style-position: inside;
 }
