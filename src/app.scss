@@ -161,6 +161,12 @@ strong {
   font-size: 1.1em;
 }
 
+@media (max-width: 768px) {
+  .is-hidden-touch .svelte-scroller-background {
+    display: none;
+  }
+}
+
 // CSS for special svelte component
 
 .message.is-definition .message-header {
