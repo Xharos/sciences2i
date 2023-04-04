@@ -1,11 +1,32 @@
 <script>
     import "../app.scss";
     import Fa from "svelte-fa";
+    import {onMount} from 'svelte'
     import {faYoutube, faGithub} from "@fortawesome/free-brands-svg-icons";
     import {page} from '$app/stores';
 
     let bActive = false;
     let date = new Date().getFullYear();
+
+    let deferredInstallEvent
+
+    onMount(() => {
+        window.addEventListener("beforeinstallprompt", e => {
+            e.preventDefault()
+            deferredInstallEvent = e
+        })
+    })
+
+    async function handleInstall() {
+        deferredInstallEvent.prompt()
+        let choice = await deferredInstallEvent.userChoice
+        if (choice.outcome === "accepted") {
+            // User accepted to install the application
+        } else {
+            // User dismissed the prompt
+        }
+        deferredInstallEvent = undefined
+    }
 </script>
 
 <!-- svelte-ignore a11y-missing-attribute -->
@@ -50,10 +71,21 @@
     </div>
 </nav>
 
+<style>
+    .install-button {
+        position: absolute;
+        top: 1px;
+        left: 1px;
+    }
+</style>
+
 <main>
     <section class="hero">
         <div class="hero-body" style="padding: 2rem">
             <slot/>
+            {#if deferredInstallEvent}
+                <button class="install-button" on:click={handleInstall}>Install</button>
+            {/if}
         </div>
     </section>
 </main>
