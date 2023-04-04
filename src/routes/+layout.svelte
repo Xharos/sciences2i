@@ -54,15 +54,15 @@
 
     <div class={bActive ? "navbar-menu is-active" : "navbar-menu"} id="navMenu">
         <div class="navbar-start">
-            <div on:click={()=> (bActive = !bActive)}>
+            <div on:click={()=> (bActive = false)}>
                 <a class="navbar-item" class:is-selected={$page.url.pathname.startsWith('/lessons')} href="/lessons">
                     Cours </a>
             </div>
-            <div on:click={()=> (bActive = !bActive)}>
+            <div on:click={()=> (bActive = false)}>
                 <a class="navbar-item" class:is-selected={$page.url.pathname.startsWith('/cards')} href="/cards">
                     Fiches </a>
             </div>
-            <div on:click={()=> (bActive = !bActive)}>
+            <div on:click={()=> (bActive = false)}>
                 <a class="navbar-item" class:is-selected={$page.url.pathname.startsWith('/tutorials')}
                    href="/tutorials">
                     Tutoriels </a>
