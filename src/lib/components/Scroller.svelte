@@ -290,68 +290,66 @@
             </svelte-scroller-background>
         </div>
         <div class="column">
-            <div class="content">
-                <svelte-scroller-foreground bind:this={foreground}>
-                    <div class="content">
-                        <slot name="foreground"/>
-                        <h1 class="toc-exclude">Auteur</h1>
-                        <br/>
-                        <div class="columns is-centered">
-                            <div class="column is-9">
+            <svelte-scroller-foreground bind:this={foreground}>
+                <div class="content">
+                    <slot name="foreground"/>
+                    <h1 class="toc-exclude">Auteur</h1>
+                    <br/>
+                    <div class="columns is-centered">
+                        <div class="column is-9">
 
-                                <div class="box">
-                                    <article class="media">
-                                        <figure class="media-left">
-                                            <p class="image is-64x64">
-                                                <img
-                                                        alt="photo de profil"
-                                                        class="is-rounded"
-                                                        height="256"
-                                                        src={auth.logo}
-                                                        width="256"
-                                                />
+                            <div class="box">
+                                <article class="media">
+                                    <figure class="media-left">
+                                        <p class="image is-64x64">
+                                            <img
+                                                    alt="photo de profil"
+                                                    class="is-rounded"
+                                                    height="256"
+                                                    src={auth.logo}
+                                                    width="256"
+                                            />
+                                        </p>
+                                    </figure>
+                                    <div class="media-content">
+                                        <div class="content">
+                                            <p>
+                                                <tag class="has-text-weight-bold">
+                                                    {auth.name}
+                                                </tag>
+                                                <tag
+                                                        class="has-text-primary is-size-7 is-italic"
+                                                >
+                                                    {auth.mail}
+                                                </tag>
+                                                <br/>
+                                                {auth.description}
                                             </p>
-                                        </figure>
-                                        <div class="media-content">
-                                            <div class="content">
-                                                <p>
-                                                    <tag class="has-text-weight-bold">
-                                                        {auth.name}
-                                                    </tag>
-                                                    <tag
-                                                            class="has-text-primary is-size-7 is-italic"
-                                                    >
-                                                        {auth.mail}
-                                                    </tag>
-                                                    <br/>
-                                                    {auth.description}
-                                                </p>
-                                            </div>
                                         </div>
-                                    </article>
-                                </div>
-
+                                    </div>
+                                </article>
                             </div>
+
                         </div>
                     </div>
-                </svelte-scroller-foreground>
-                <div class="section">
-                    <nav aria-label="pagination" class="pagination is-centered" role="navigation">
-                        {#if prevElement }
-                            <a class="pagination-previous" href={prevElement.link}>{prevElement.title}</a>
-                        {/if}
-                        {#if nextElement }
-                            <a class="pagination-next" href={nextElement.link}>{nextElement.title}</a>
-                        {/if}
-                        {#if element }
-                            <ul class="pagination-list">
-                                <li>
-                                    <p class="pagination-link is-current">{element.title}</p>
-                                </li>
-                            </ul>
-                        {/if}
-                    </nav>
                 </div>
+            </svelte-scroller-foreground>
+            <div class="section">
+                <nav aria-label="pagination" class="pagination is-centered" role="navigation">
+                    {#if prevElement }
+                        <a class="pagination-previous" href={prevElement.link}>{prevElement.title}</a>
+                    {/if}
+                    {#if nextElement }
+                        <a class="pagination-next" href={nextElement.link}>{nextElement.title}</a>
+                    {/if}
+                    {#if element }
+                        <ul class="pagination-list">
+                            <li>
+                                <p class="pagination-link is-current">{element.title}</p>
+                            </li>
+                        </ul>
+                    {/if}
+                </nav>
             </div>
         </div>
     </div>
