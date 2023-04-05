@@ -106,7 +106,7 @@ a.menu-label {
   display: block;
   height: 50px !important;
   margin: -50px 0 0 !important;
-
+  z-index: -1;
 }
 
 .title-link-container {
@@ -211,4 +211,3 @@ strong {
 .message.is-remember {
   background-color: $remember_light;
 }
-

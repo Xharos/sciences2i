@@ -48,7 +48,6 @@
             const term3 = (zeta / (Math.sqrt(1 - zeta ** 2))) * Math.sin(omega_n * t * Math.sqrt(1 - zeta ** 2));
             return A * (1 - term1 * (term2 + term3));
         });
-        console.log(yValues);
         chart.data.datasets[0].data = yValues;
         chart.update();
     }
@@ -131,7 +130,31 @@
 
 <Scroller {crumbs} {lastCrumb} {lastDate} {title} {url}>
     <div slot="foreground">
-        <h1>Mon premier titre</h1>
+        <h1>Exemple d'utilisation des figures</h1>
+        <div class="columns is-mobile is-centered">
+            <div class="column is-12-tablet is-8-desktop">
+                <div class="chart-container">
+                    <canvas id="chart"></canvas>
+                </div>
+            </div>
+        </div>
+        <p>Ce graphique représente la réponse impulsionnelle d'un système du second ordre sous-amorti :
+
+        </p>
+        <K displayMode
+           math={"h(t) = Ke_0\\Bigg[1-e^{-\\xi w_0t}\\bigg( \\cos\\Big(w_0t\\sqrt{1 - \\xi^2} \\Bigr) \\biggr) + \\frac{\\xi}{\\sqrt{1-\\xi^2}}\\sin\\Big(w_0t\\sqrt{1 - \\xi^2} \\Bigr) \\Biggr]"}/>
+        <div class="slider-container">
+            <label for="zeta-slider">Fait varier le coefficient d'amortissement
+                <K math='{"\\xi"}'/>
+                :</label>
+            <input id="zeta-slider" max="0.99" min="0" on:input={handleZetaChange} step="0.05" type="range"
+                   value={zeta}/>
+            <span>{zeta}</span>
+        </div>
+        <br/>
+        <br/>
+
+        <h1>Mon deuxième titre</h1>
 
         <p>Bloc coloré avec compteur intégré :</p>
 
@@ -169,27 +192,7 @@
             <img src="$lib/assets/elec.webp">
         </Figure>
 
-        <h1>Exemple d'utilisation des figures</h1>
-        <div class="columns is-mobile is-centered">
-            <div class="column is-10">
-                <div class="chart-container">
-                    <canvas id="chart"></canvas>
-                </div>
-            </div>
-        </div>
-        <p>Ce graphique représente la réponse impulsionnelle d'un système du second ordre sous-amorti :
 
-        </p>
-        <K displayMode
-           math={"h(t) = Ke_0\\Bigg[1-e^{-\\xi w_0t}\\bigg( \\cos\\Big(w_0t\\sqrt{1 - \\xi^2} \\Bigr) \\biggr) + \\frac{\\xi}{\\sqrt{1-\\xi^2}}\\sin\\Big(w_0t\\sqrt{1 - \\xi^2} \\Bigr) \\Biggr]"}/>
-        <div class="slider-container">
-            <label for="zeta-slider">Fait varier le coefficient d'amortissement
-                <K math='{"\\xi"}'/>
-                :</label>
-            <input id="zeta-slider" max="0.99" min="0" on:input={handleZetaChange} step="0.05" type="range"
-                   value={zeta}/>
-            <span>{zeta}</span>
-        </div>
     </div>
 </Scroller>
 

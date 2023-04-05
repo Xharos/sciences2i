@@ -144,6 +144,9 @@
 
             const innerContainer = document.createElement('div');
             innerContainer.classList.add("inner");
+            if (i === 0) {
+                innerContainer.classList.add("intro");
+            }
 
             const titleInnerContainer = document.createElement('div');
             titleInnerContainer.classList.add("title-link-container");
@@ -375,7 +378,6 @@
     svelte-scroller-foreground {
         display: block;
         position: relative;
-        /*z-index: condo;*/
     }
 
     svelte-scroller-foreground::after {
