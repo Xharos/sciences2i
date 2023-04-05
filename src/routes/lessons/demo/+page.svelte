@@ -122,9 +122,9 @@
 </script>
 
 <svelte:head>
-    <title>Informatique | Sciences 2I</title>
+    <title>Démonstration | Sciences 2I</title>
     <meta
-            content="Liste des cours d'informatique en sciences industrielles de l'ingénieur."
+            content="Page de démonstration du site sciences-2i."
             name="description"
     />
 </svelte:head>
