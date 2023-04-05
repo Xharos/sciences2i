@@ -20,9 +20,9 @@ const valentin = new Author(
 const fabien = new Author(
     "SANCHEZ Fabien",
     "fabien.sanchez@ens-rennes.fr",
-    "Étudiant à l'École Normale Supérieure de Rennes, major de l'agrégation de sciences industrielles option génie électrique 2022.",
+    "Étudiant à l'École Normale Supérieure de Rennes, lauréat de l'agrégation de sciences industrielles option génie électrique 2022.",
     fabienLogo
 );
 
-let authors = { valentin: valentin};
+let authors = {valentin: valentin, fabien:fabien};
 export default authors;
