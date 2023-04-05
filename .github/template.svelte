@@ -63,8 +63,8 @@
             Le mode math peut s'intégrer en ligne (comme ici
             <K math={"10^{-4}\\space m.s^{-1}"}/>
             ) ou bien sur plusieurs :
-            <K displayMode math={"U_{AB} = V_A - V_B"}/>
         </p>
+        <K displayMode math={"U_{AB} = V_A - V_B"}/>
 
         <h2>Ajouter des images</h2>
         <p>L'image est ajouté dans un container centré et aux bonnes dimensions. Il est possible de le re-dimensionner

@@ -5,6 +5,7 @@
         faPlug,
         faChargingStation,
         faTowerBroadcast,
+        faComputer,
     } from "@fortawesome/free-solid-svg-icons";
 
     export const Crumbs = {
@@ -17,6 +18,11 @@
             textKey: "Électricité",
             link: "/lessons/elec",
             icon: faBolt,
+        },
+        INFORMATIQUE: {
+            textKey: "Informatique",
+            link: "/lessons/info",
+            icon: faComputer,
         },
         ELECTRONIQUE: {
             textKey: "Électronique",
