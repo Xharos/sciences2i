@@ -21,8 +21,12 @@
     />
 </svelte:head>
 {#if displayMode}
-    <div class="scrollable-container">
-        {@html katexString}
+    <div class="columns is-centered">
+        <div class="column is-12">
+            <div class="scrollable-container">
+                {@html katexString}
+            </div>
+        </div>
     </div>
 {:else}
     {@html katexString}

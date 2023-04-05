@@ -29,9 +29,9 @@
             <div class="content">
                 <span class="icon-text is-size-3 has-text-primary">
                     <span class="icon">
-                        <Fa icon={faBolt}/>
+                        <Fa icon={Crumbs.ELECTRICITE.icon}/>
                     </span>
-                    <span class="space">Génie électrique</span>
+                    <span class="space">{Crumbs.ELECTRICITE.textKey}</span>
                 </span>
             </div>
             <Breadcrumb crumbs={crumbs}/>

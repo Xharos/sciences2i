@@ -126,8 +126,6 @@
 		z-index: ${inverted ? 3 : 1};
 	`;
 
-    $: widthStyle = `width:${width / 6.1}px;`;
-
     onMount(() => {
         sections = foreground.querySelectorAll(query);
         titlesDOM = foreground.querySelectorAll(
@@ -294,7 +292,7 @@
         </div>
         <div class="column">
             <svelte-scroller-foreground bind:this={foreground}>
-                <div class="content">
+                <div class="content main-container">
                     <slot name="foreground"/>
                     <h1 class="toc-exclude">Auteur</h1>
                     <br/>
@@ -332,7 +330,6 @@
                                     </div>
                                 </article>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -359,11 +356,25 @@
 </svelte-scroller-outer>
 
 <style>
+
+    @media screen and (min-width: 1024px) {
+        .main-container {
+            width: 80vw;
+        }
+    }
+
+    @media screen and (min-width: 767px) and (max-width: 1023px) {
+        .main-container {
+            width: 90vw;
+        }
+    }
+
     svelte-scroller-outer {
         display: grid;
         grid-template-columns: minmax(0, auto) minmax(0, 1fr);
         position: relative;
-        width: 100%;
+        width: 100vw;
+        max-width: 100%;
         margin: 0 auto;
     }
 

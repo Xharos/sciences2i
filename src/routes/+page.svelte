@@ -54,18 +54,22 @@
                 </div>
             </div>
 
+            <div class="notification is-primary">
+                Le site est en cours de construction, voici un <a href="/lessons/demo">lien vers la page exemple</a>.
+            </div>
+
             <div class="columns is-desktop">
                 <div class="column is-12-tablet is-7-desktop">
                     <div class="content">
                         <p>
-                            Ce site recense mes années d'expériences en enseignement
+                            Ce site recense mes années d'expérience en enseignement
                             des sciences de l'ingénieur. Il est destiné tout
                             particulièrement aux élèves et aux professeurs des
                             classes de l'enseignement supérieur.
                         </p>
                         <p>
                             Tu pourras y retrouver un ensemble de cours
-                            interractifs, tutoriels et de fiches sur les grands
+                            interactifs, tutoriels et de fiches sur les grands
                             thèmes de la mécatronique.
                         </p>
                         <p>
@@ -149,13 +153,12 @@
                     </div>
                 </div>
             </div>
-            <div class="content">
-                <blockquote class="is-primary">
+            <article class="message m-4 is-primary">
+                <div class="message-body">
                     Des erreurs peuvent se glisser dans ces pages, merci de m'en
-                    faire part par mail ou via le github du projet ou ce site est
-                    hébergé.
-                </blockquote>
-            </div>
+                    faire part par mail ou via le <i>github</i> du projet ou ce site est hébergé.
+                </div>
+            </article>
             <div class="content">
             <span class="icon-text is-size-5 has-text-primary">
                 <span class="icon">
@@ -177,8 +180,8 @@
                     <p>Loading...</p>
                 {/if}
             </div>
-            <div class="content">
-                <blockquote class="is-primary">
+            <article class="message m-4 is-primary">
+                <div class="message-body">
                     <a
                             href="http://creativecommons.org/licenses/by-nc/4.0/"
                             rel="license"
@@ -200,8 +203,8 @@
                         Licence Creative Commons Attribution - Pas d'Utilisation
                         Commerciale 4.0 International
                     </a>.
-                </blockquote>
-            </div>
+                </div>
+            </article>
         </section>
     </div>
 </div>
