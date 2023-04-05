@@ -132,7 +132,7 @@
     <div slot="foreground">
         <h1>Exemple d'utilisation des figures</h1>
         <div class="columns is-mobile is-centered">
-            <div class="column is-12-tablet is-8-desktop">
+            <div class="column is-12-desktop is-8-widescreen">
                 <div class="chart-container">
                     <canvas id="chart"></canvas>
                 </div>
