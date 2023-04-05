@@ -8,26 +8,26 @@
     let bActive = false;
     let date = new Date().getFullYear();
 
-    let deferredInstallEvent
+    let deferredInstallEvent;
+
+    let show = true;
 
     onMount(() => {
         window.addEventListener("beforeinstallprompt", e => {
-            e.preventDefault()
-            deferredInstallEvent = e
+            e.preventDefault();
+            deferredInstallEvent = e;
         })
     })
 
-    console.log(deferredInstallEvent);
-
     async function handleInstall() {
-        deferredInstallEvent.prompt()
-        let choice = await deferredInstallEvent.userChoice
+        deferredInstallEvent.prompt();
+        let choice = await deferredInstallEvent.userChoice;
         if (choice.outcome === "accepted") {
-            // User accepted to install the application
+            console.log("Installated");
         } else {
-            // User dismissed the prompt
+            console.log("Refused");
         }
-        deferredInstallEvent = undefined
+        deferredInstallEvent = undefined;
     }
 </script>
 
@@ -69,6 +69,11 @@
                    href="/tutorials">
                     Tutoriels </a>
             </div>
+            {#if deferredInstallEvent}
+                <div on:click={()=> (bActive = false)}>
+                    <a class="navbar-item" on:click={handleInstall} href="/">Installer</a>
+                </div>
+            {/if}
         </div>
     </div>
 </nav>
@@ -76,13 +81,6 @@
 <main>
     <section class="hero">
         <div class="hero-body" style="padding: 2rem">
-            {#if deferredInstallEvent}
-                <div class="columns is-centered">
-                    <div class="column is-1">
-                        <button class="install-button button" on:click={handleInstall}>Install</button>
-                    </div>
-                </div>
-            {/if}
             <slot/>
         </div>
     </section>
@@ -135,6 +133,14 @@
                     />
                 </a>
             </div>
+
+            {#if deferredInstallEvent}
+                <div class="ml-auto centered">
+                    <button class="install-button button is-primary is-light" on:click={handleInstall}>
+                        Installer
+                    </button>
+                </div>
+            {/if}
         </div>
     </div>
 </footer>
