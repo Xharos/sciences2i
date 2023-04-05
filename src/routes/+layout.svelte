@@ -17,6 +17,8 @@
         })
     })
 
+    console.log(deferredInstallEvent);
+
     async function handleInstall() {
         deferredInstallEvent.prompt()
         let choice = await deferredInstallEvent.userChoice
@@ -71,21 +73,17 @@
     </div>
 </nav>
 
-<style>
-    .install-button {
-        position: absolute;
-        top: 1px;
-        left: 1px;
-    }
-</style>
-
 <main>
     <section class="hero">
         <div class="hero-body" style="padding: 2rem">
-            <slot/>
             {#if deferredInstallEvent}
-                <button class="install-button" on:click={handleInstall}>Install</button>
+                <div class="columns is-centered">
+                    <div class="column is-1">
+                        <button class="install-button button" on:click={handleInstall}>Install</button>
+                    </div>
+                </div>
             {/if}
+            <slot/>
         </div>
     </section>
 </main>
