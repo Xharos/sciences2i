@@ -167,6 +167,13 @@ strong {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .centered {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 // CSS for special svelte component
 
 .message.is-definition .message-header {

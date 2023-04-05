@@ -109,23 +109,35 @@
         </div>
     </div>
     <div class="pt-5" style="border-top: 1px solid #dee2e6;"></div>
-    <div class="container">
+    <div class="container is-flex-mobile centered">
         <div class="is-flex-tablet is-justify-content-between is-align-items-center">
             <p><span class="tag is-primary">2023-{date}</span> | Valentin BURGAUD</p>
             <div class="py-2 is-hidden-tablet"></div>
-            <div class="ml-auto">
+            <div class="ml-auto centered">
                 <a class="mr-4 is-inline-block"
                    href="https://www.youtube.com/channel/UC197VifUbGS9iqCiYUe0hSA">
-                    <span class="icon">
-                        <Fa icon={faYoutube} primaryColor="#FF0000"/>
-                    </span>
+                <span class="icon">
+                    <Fa icon={faYoutube} primaryColor="#FF0000"/>
+                </span>
                 </a>
                 <a class="mr-4 is-inline-block" href="https://github.com/Xharos/sciences2i">
-                    <span class="icon">
-                        <Fa icon={faGithub} primaryColor="#171515"/>
-                    </span>
+                <span class="icon">
+                    <Fa icon={faGithub} primaryColor="#171515"/>
+                </span>
+                </a>
+                <a class="mr-4 is-inline-block"
+                   href="http://creativecommons.org/licenses/by-nc/4.0/"
+                   rel="license">
+                    <img
+                            alt="Licence Creative Commons"
+                            height="31"
+                            src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"
+                            style="border-width:0"
+                            width="88"
+                    />
                 </a>
             </div>
         </div>
     </div>
 </footer>
+
