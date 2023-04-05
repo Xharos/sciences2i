@@ -92,7 +92,7 @@
             <div class="mr-auto mb-2">
                 <a class="is-inline-block" href="/">
                     <img alt="Logo du site, casque de chantier sur un engrenage" class="image"
-                         src="$lib/assets/favicon_32x32.webp" width="32px">
+                         height="32" src="$lib/assets/favicon_32x32.webp" width="32">
                 </a>
             </div>
             <div>
@@ -136,7 +136,7 @@
 
             {#if deferredInstallEvent}
                 <div class="ml-auto centered">
-                    <button class="install-button button is-primary is-light" on:click={handleInstall}>
+                    <button class="install-button button is-primary" on:click={handleInstall}>
                         Installer
                     </button>
                 </div>
