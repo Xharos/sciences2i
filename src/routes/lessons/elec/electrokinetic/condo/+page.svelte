@@ -24,13 +24,12 @@
 <svelte:head>
     <title>{title} | Sciences 2I</title>
     <meta
-            content="Cours sur les lois électriques dans l'approximation des régimes quasi stationnaires (ARQS)."
+            content="Cours sur les bobines et condensateurs dans l'approximation des régimes quasi stationnaires (ARQS)."
             name="description"
     />
 </svelte:head>
 
-<Scroller {crumbs} {element} {lastCrumb} {lastDate} {nextElement} {prevElement} {title} {url} author="fabien">
-    <div slot="background"/>
+<Scroller author="fabien" {crumbs} {element} {lastCrumb} {lastDate} {nextElement} {prevElement} {title} {url}>
     <div slot="foreground">
         <h1>La bobine</h1>
     </div>
