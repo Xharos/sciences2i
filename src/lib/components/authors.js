@@ -24,5 +24,5 @@ const fabien = new Author(
     fabienLogo
 );
 
-let authors = { valentin: valentin, fabien: fabien };
+let authors = { valentin: valentin};
 export default authors;

@@ -29,7 +29,7 @@
     />
 </svelte:head>
 
-<Scroller {crumbs} {element} {lastCrumb} {lastDate} {nextElement} {prevElement} {title} {url}>
+<Scroller {crumbs} {element} {lastCrumb} {lastDate} {nextElement} {prevElement} {title} {url} author="fabien">
     <div slot="background"/>
     <div slot="foreground">
         <h1>La bobine</h1>
