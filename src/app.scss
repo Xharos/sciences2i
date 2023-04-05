@@ -10,108 +10,231 @@
 @import "bulma/sass/layout/_all";
 
 :root {
-    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 400;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
 
-    color-scheme: light dark;
-    color: #ECF0F3;
-    background-color: #ffffff;
+  color-scheme: light dark;
+  color: #ECF0F3;
+  background-color: #ffffff;
 
-    font-synthesis: weight;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
+  font-synthesis: weight;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 
 html,
 body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    height: 100%;
-    background: #ffffff;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    scroll-behavior: smooth;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  height: 100%;
+  background: #ffffff;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  scroll-behavior: smooth;
 }
 
 #wrapper {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar-item,
 .navbar-link {
-    padding: 0.5rem 1rem;
-    font-size: 22px;
-    line-height: 2.2
+  padding: 0.5rem 1rem;
+  font-size: 22px;
+  line-height: 2.2
+}
+
+.navbar-item.is-selected {
+  color: $primary;
+  font-weight: bold;
 }
 
 footer {
-    margin-top: auto;
+  margin-top: auto;
 }
 
 .video-responsive {
-    overflow: hidden;
-    padding-bottom: 56.25%;
-    position: relative;
-    height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
 }
 
 .video-responsive iframe {
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
 .content blockquote.is-primary {
-    background-color: lighten($primary, 64%);
-    ;
-    color: $primary;
-    border-color: $primary;
+  background-color: lighten($primary, 64%);;
+  color: $primary;
+  border-color: $primary;
 }
 
 .content blockquote.is-primary.is-light {
-    background-color: #ffffff;
-    color: $secondary;
-    border-color: $primary;
+  background-color: #ffffff;
+  color: $secondary;
+  border-color: $primary;
 }
 
 .space {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 p.menu-label,
 a.menu-label {
-    font-weight: bold;
+  font-weight: bold;
 }
 
-[id]::before {
-    content: '';
-    display: block;
-    height: 80px;
-    margin-top: -80px;
-    visibility: hidden;
+.inner {
+  position: relative;
 }
 
-.content h1,
+.inner:before {
+  content: "";
+  display: block;
+  height: 50px !important;
+  margin: -50px 0 0 !important;
+  z-index: -1;
+}
+
+.title-link-container {
+  display: flex;
+  align-items: center;
+}
+
+.title-link-container a {
+  margin-right: 10px;
+}
+
+.link-translucent {
+  opacity: 0.2;
+  transition: opacity 0.2s;
+}
+
+div[slot="foreground"] > *:not([id^="section"]) {
+  margin-left: 20px;
+}
+
+div[slot="foreground"] ul {
+  list-style-position: inside;
+}
+
+p {
+  text-align: justify;
+  text-justify: distribute;
+  text-align-last: left;
+}
+
+.link-translucent:hover {
+  opacity: 1;
+}
+
+.content h1 {
+  color: $primary;
+  line-height: 30px;
+}
+
 .content h2 {
-    color: $primary;
-    line-height: 30px;
+  color: $secondary;
+  line-height: 20px;
+  font-size: 24px;
 }
 
 strong {
-    color: $primary;
-    font-weight: bold;
+  color: $primary;
+  font-weight: bold;
 }
 
 .katex {
-    font-size: 1.1em;
+  font-size: 1.1em;
+}
+
+// Katex wrapper on mobile
+.scrollable-container {
+  display: inline-block;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.scrollable-container::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.scrollable-container::-webkit-scrollbar-thumb {
+  background-color: $secondary;
+  border-radius: 5px;
+}
+
+.scrollable-container::-webkit-scrollbar-track {
+  background-color: $tertiary;
+  border-radius: 5px;
+}
+
+//end
+
+//padding on mobile
+@media only screen and (max-width: 767px) {
+  .hero-body {
+    padding: 15px !important;
+  }
+}
+
+//footer
+@media screen and (max-width: 768px) {
+  .centered {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+// CSS for special svelte component
+
+.message.is-definition .message-header {
+  background-color: $definition;
+}
+
+.message.is-definition .message-body {
+  color: $definition;
+}
+
+.message.is-definition {
+  background-color: $definition_light;
+}
+
+.message.is-property .message-header {
+  background-color: $property;
+}
+
+.message.is-property .message-body {
+  color: $property;
+}
+
+.message.is-property {
+  background-color: $property_light;
+}
+
+.message.is-remember .message-header {
+  background-color: $remember;
+}
+
+.message.is-remember .message-body {
+  color: $remember;
+}
+
+.message.is-remember {
+  background-color: $remember_light;
 }

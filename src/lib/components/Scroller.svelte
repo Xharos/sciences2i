@@ -32,8 +32,8 @@
         );
 
         manager = {
-            add: ({ outer, update }) => {
-                const { top, bottom } = outer.getBoundingClientRect();
+            add: ({outer, update}) => {
+                const {top, bottom} = outer.getBoundingClientRect();
 
                 if (top < window.innerHeight && bottom > 0)
                     handlers.push(update);
@@ -42,7 +42,7 @@
                 observer.observe(outer);
             },
 
-            remove: ({ outer, update }) => {
+            remove: ({outer, update}) => {
                 const index = handlers.indexOf(update);
                 if (index !== -1) handlers.splice(index, 1);
 
@@ -52,11 +52,11 @@
         };
     } else {
         manager = {
-            add: ({ update }) => {
+            add: ({update}) => {
                 handlers.push(update);
             },
 
-            remove: ({ update }) => {
+            remove: ({update}) => {
                 const index = handlers.indexOf(update);
                 if (index !== -1) handlers.splice(index, 1);
             },
@@ -65,11 +65,15 @@
 </script>
 
 <script>
-    import { onMount } from "svelte";
+    import {onMount} from "svelte";
+    import authors from "$lib/components/authors.js";
+    import {faGithub, faLinkedin, faYoutube} from "@fortawesome/free-brands-svg-icons";
+    import Fa from "svelte-fa";
+    import Breadcrumb from "$lib/components/Breadcrumb.svelte";
 
     // config
     export let top = 0.12;
-    export let bottom = 0.8;
+    export let bottom = 0.9;
     export let threshold = 0.5;
     export let query = "section";
     export let parallax = false;
@@ -82,7 +86,18 @@
     export let visible = false;
     export let url = "/";
     export let lastDate = "29/03/2023";
-    export let author = "Valentin";
+
+    export let crumbs = [];
+    export let lastCrumb = null;
+    export let author = "valentin";
+
+    export let nextElement;
+    export let element;
+    export let prevElement;
+
+    export let title;
+    let auth = authors[author];
+
 
     let outer;
     let foreground;
@@ -111,8 +126,6 @@
 		z-index: ${inverted ? 3 : 1};
 	`;
 
-    $: widthStyle = `width:${width / 6.1}px;`;
-
     onMount(() => {
         sections = foreground.querySelectorAll(query);
         titlesDOM = foreground.querySelectorAll(
@@ -122,15 +135,39 @@
             titles[i] = [
                 titlesDOM[i].outerText,
                 titlesDOM[i].nodeName,
-                titlesDOM[i].id,
+                `section-${i + 1}`,
             ];
+            const container = document.createElement('div');
+            container.id = `section-${i + 1}`;
+
+            const innerContainer = document.createElement('div');
+            innerContainer.classList.add("inner");
+            if (i === 0) {
+                innerContainer.classList.add("intro");
+            }
+
+            const titleInnerContainer = document.createElement('div');
+            titleInnerContainer.classList.add("title-link-container");
+
+            titlesDOM[i].removeAttribute("id");
+
+            titlesDOM[i].parentNode.insertBefore(container, titlesDOM[i]);
+            container.appendChild(innerContainer);
+            innerContainer.appendChild(titleInnerContainer);
+
+            const link = document.createElement('a');
+            link.href = `#section-${i + 1}`;
+            link.textContent = '#';
+            link.classList.add('link-translucent');
+            titleInnerContainer.appendChild(link);
+            titleInnerContainer.appendChild(titlesDOM[i]);
         }
 
         count = sections.length;
 
         update();
 
-        const scroller = { outer, update };
+        const scroller = {outer, update};
 
         manager.add(scroller);
         return () => manager.remove(scroller);
@@ -170,15 +207,15 @@
         } else {
             offset_top = parallax
                 ? Math.round(
-                      top_px - progress * (background_height - available_space)
-                  )
+                    top_px - progress * (background_height - available_space)
+                )
                 : top_px;
             fixed = true;
         }
 
         for (let i = 0; i < sections.length; i++) {
             const section = sections[i];
-            const { top } = section.getBoundingClientRect();
+            const {top} = section.getBoundingClientRect();
 
             const next = sections[i + 1];
             const bottom = next ? next.getBoundingClientRect().top : fg.bottom;
@@ -192,69 +229,152 @@
     }
 </script>
 
-<svelte:window bind:innerHeight={wh} />
+<div class="columns is-centered">
+    <div class="column is-12">
+        <Breadcrumb crumbs={crumbs} lastCrumb={lastCrumb}/>
+        <div class="content has-text-centered">
+            <h1>{title}</h1>
+        </div>
+    </div>
+</div>
+
+<svelte:window bind:innerHeight={wh}/>
 
 <svelte-scroller-outer bind:this={outer}>
     <div class="columns">
         <div class="column is-2 is-hidden-touch">
             <svelte-scroller-background
-                bind:this={background}
-                style:top="{calc}px"
+                    bind:this={background}
+                    style:top="{calc}px"
             >
-                <slot name="background" />
-                <aside class="menu">
-                    <p class="menu-label">Table des matières</p>
-                    <div class="tags has-addons">
-                        <span class="tag">Date</span>
-                        <span class="tag is-primary">{lastDate}</span>
-                    </div>
-                    <div class="columns">
-                        <div class="column is-11">
-                            <progress
-                                class="progress is-small is-primary"
-                                value={Math.round(progress * 100) / 100}
-                                max="1"
-                                >{Math.round(progress * 100) / 1}%</progress
-                            >
+                <div class="box" style="padding: 5px">
+                    <slot name="background"/>
+                    <aside class="menu">
+                        <p class="menu-label">Table des matières</p>
+                        <div class="tags has-addons">
+                            <span class="tag">Date</span>
+                            <span class="tag is-primary">{lastDate}</span>
                         </div>
-                    </div>
-                    {#each titles as title, i}
-                        {#if title[1] === "H1"}
-                            <a href={url + "#" + title[2]} class="menu-label"
+                        <div class="columns">
+                            <div class="column">
+                                <progress
+                                        class="progress is-small is-primary"
+                                        max="1"
+                                        value={Math.round(progress * 100) / 100}
+                                >{Math.round(progress * 100) / 1}%
+                                </progress
+                                >
+                            </div>
+                        </div>
+                        {#each titles as title, i}
+                            {#if title[1] === "H1"}
+                                <a href={url + "#" + title[2]} class="menu-label"
                                 >{title[0]}</a
-                            >
-                            <ul class="menu-list">
-                                {#each titles.slice(i + 1, titles.indexOf(titles
-                                            .slice(i + 1, titles.length)
-                                            .find((obj) => obj[1] === "H1")) === -1 ? titles.length : titles.indexOf(titles
-                                                  .slice(i + 1, titles.length)
-                                                  .find((obj) => obj[1] === "H1"))) as section}
-                                    <li>
-                                        <a href={url + "#" + section[2]}
+                                >
+                                <ul class="menu-list">
+                                    {#each titles.slice(i + 1, titles.indexOf(titles
+                                        .slice(i + 1, titles.length)
+                                        .find((obj) => obj[1] === "H1")) === -1 ? titles.length : titles.indexOf(titles
+                                        .slice(i + 1, titles.length)
+                                        .find((obj) => obj[1] === "H1"))) as section}
+                                        <li>
+                                            <a href={url + "#" + section[2]}
                                             >{section[0]}</a
-                                        >
-                                    </li>{/each}
-                            </ul>
-                        {/if}
-                    {/each}
-                </aside>
+                                            >
+                                        </li>
+                                    {/each}
+                                </ul>
+                            {/if}
+                        {/each}
+                    </aside>
+                </div>
             </svelte-scroller-background>
         </div>
         <div class="column">
             <svelte-scroller-foreground bind:this={foreground}>
-                <slot name="foreground" />
+                <div class="content main-container">
+                    <slot name="foreground"/>
+                    <h1 class="toc-exclude">Auteur</h1>
+                    <br/>
+                    <div class="columns is-centered">
+                        <div class="column is-9">
+
+                            <div class="box">
+                                <article class="media">
+                                    <figure class="media-left">
+                                        <p class="image is-64x64">
+                                            <img
+                                                    alt="photo de profil"
+                                                    class="is-rounded"
+                                                    height="256"
+                                                    src={auth.logo}
+                                                    width="256"
+                                            />
+                                        </p>
+                                    </figure>
+                                    <div class="media-content">
+                                        <div class="content">
+                                            <p>
+                                                <tag class="has-text-weight-bold">
+                                                    {auth.name}
+                                                </tag>
+                                                <tag
+                                                        class="has-text-primary is-size-7 is-italic"
+                                                >
+                                                    {auth.mail}
+                                                </tag>
+                                                <br/>
+                                                {auth.description}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </svelte-scroller-foreground>
+            <div class="section">
+                <nav aria-label="pagination" class="pagination is-centered" role="navigation">
+                    {#if prevElement }
+                        <a class="pagination-previous" href={prevElement.link}>{prevElement.title}</a>
+                    {/if}
+                    {#if nextElement }
+                        <a class="pagination-next" href={nextElement.link}>{nextElement.title}</a>
+                    {/if}
+                    {#if element }
+                        <ul class="pagination-list">
+                            <li>
+                                <p class="pagination-link is-current">{element.title}</p>
+                            </li>
+                        </ul>
+                    {/if}
+                </nav>
+            </div>
         </div>
-    </div></svelte-scroller-outer
->
+    </div>
+</svelte-scroller-outer>
 
 <style>
+
+    @media screen and (min-width: 1024px) {
+        .main-container {
+            width: 80vw;
+        }
+    }
+
+    @media screen and (min-width: 767px) and (max-width: 1023px) {
+        .main-container {
+            width: 90vw;
+        }
+    }
+
     svelte-scroller-outer {
         display: grid;
-        grid-template-columns: 1fr 0em;
-        max-width: 100em;
+        grid-template-columns: minmax(0, auto) minmax(0, 1fr);
         position: relative;
-        width: 100%;
+        width: 100vw;
+        max-width: 100%;
         margin: 0 auto;
     }
 
@@ -269,7 +389,6 @@
     svelte-scroller-foreground {
         display: block;
         position: relative;
-        /*z-index: 2;*/
     }
 
     svelte-scroller-foreground::after {

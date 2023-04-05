@@ -1,15 +1,15 @@
 <script>
-    import { faChalkboardTeacher } from "@fortawesome/free-solid-svg-icons";
+    import {faChalkboardTeacher} from "@fortawesome/free-solid-svg-icons";
     import Fa from "svelte-fa";
 </script>
 
 <svelte:head>
     <title>
-        Tutoriels | Sciences 2I, cours et fiches de sciences industrielles
+        Tutoriels | Sciences 2I
     </title>
     <meta
-        name="description"
-        content="Liste de tutoriels pour l'enseignement des sciences industrielles de l'ingénieur dans l'enseignement supérieur."
+            content="Liste de tutoriels pour l'enseignement des sciences industrielles de l'ingénieur dans l'enseignement supérieur."
+            name="description"
     />
 </svelte:head>
 
@@ -19,7 +19,7 @@
             <div class="content">
                 <span class="icon-text is-size-3 has-text-primary">
                     <span class="icon">
-                        <Fa icon={faChalkboardTeacher} />
+                        <Fa icon={faChalkboardTeacher}/>
                     </span>
                     <span class="space">Tutoriels</span>
                 </span>

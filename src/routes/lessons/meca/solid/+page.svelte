@@ -5,15 +5,15 @@
 
     const crumbs = [
         Crumbs.COURS,
-        Crumbs.ELECTRICITE,
-        Crumbs.ELECTRONIQUE,
+        Crumbs.MECANIQUE,
+        Crumbs.SOLIDE,
     ];
 </script>
 
 <svelte:head>
-    <title>Électronique | Sciences 2I</title>
+    <title>Mécanique solide | Sciences 2I</title>
     <meta
-            content="Liste des cours d'électronique en sciences industrielles de l'ingénieur."
+            content="Liste des cours de mécanique du solide en sciences industrielles de l'ingénieur."
             name="description"
     />
 </svelte:head>
@@ -24,17 +24,16 @@
             <div class="content">
                 <span class="icon-text is-size-3 has-text-primary">
                     <span class="icon">
-                        <Fa icon={Crumbs.ELECTRONIQUE.icon}/>
+                        <Fa icon={Crumbs.SOLIDE.icon}/>
                     </span>
-                    <span class="space">{Crumbs.ELECTRONIQUE.textKey}</span>
+                    <span class="space">{Crumbs.SOLIDE.textKey}</span>
                 </span>
             </div>
             <Breadcrumb crumbs={crumbs}/>
             <div class="content">
                 <p>
-                    Le terme électronique désigne une branche de la physique
-                    appliquée, qui s'intéresse aux phénomènes de conduction
-                    électrique et aux équipements associés.
+                    Le terme mécanique du solide est la partie de la mécanique qui s'intéresse aux objets que l'on ne
+                    peut réduire en un point matériel.
                 </p>
             </div>
         </section>

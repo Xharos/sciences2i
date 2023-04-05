@@ -5,15 +5,15 @@
 
     const crumbs = [
         Crumbs.COURS,
-        Crumbs.ELECTRICITE,
-        Crumbs.ELECTRONIQUE,
+        Crumbs.INFORMATIQUE,
+        Crumbs.AUTOMATIQUE,
     ];
 </script>
 
 <svelte:head>
-    <title>Électronique | Sciences 2I</title>
+    <title>Automatique | Sciences 2I</title>
     <meta
-            content="Liste des cours d'électronique en sciences industrielles de l'ingénieur."
+            content="Liste des cours d'automatique en sciences industrielles de l'ingénieur."
             name="description"
     />
 </svelte:head>
@@ -24,17 +24,18 @@
             <div class="content">
                 <span class="icon-text is-size-3 has-text-primary">
                     <span class="icon">
-                        <Fa icon={Crumbs.ELECTRONIQUE.icon}/>
+                        <Fa icon={Crumbs.ELECTROTECHNIQUE.icon}/>
                     </span>
-                    <span class="space">{Crumbs.ELECTRONIQUE.textKey}</span>
+                    <span class="space">{Crumbs.ELECTROTECHNIQUE.textKey}</span>
                 </span>
             </div>
             <Breadcrumb crumbs={crumbs}/>
             <div class="content">
                 <p>
-                    Le terme électronique désigne une branche de la physique
-                    appliquée, qui s'intéresse aux phénomènes de conduction
-                    électrique et aux équipements associés.
+                    Le terme électrotechnique désigne l'étude des applications
+                    techniques de l'électricité ou encore, la discipline qui
+                    étudie la production, le transport, le traitement, la
+                    transformation et l'utilisation de l'énergie électrique.
                 </p>
             </div>
         </section>

@@ -10,11 +10,11 @@
 
 <svelte:head>
     <title>
-        Cours | Sciences 2I, cours et fiches de sciences industrielles
+        Cours | Sciences 2I
     </title>
     <meta
-        name="description"
-        content="Liste de cours détaillés pour l'enseignement des sciences industrielles de l'ingénieur dans l'enseignement supérieur."
+            content="Liste de cours détaillés pour l'enseignement des sciences industrielles de l'ingénieur dans l'enseignement supérieur."
+            name="description"
     />
 </svelte:head>
 
@@ -24,7 +24,7 @@
             <div class="content">
                 <span class="icon-text is-size-3 has-text-primary">
                     <span class="icon">
-                        <Fa icon={faPersonChalkboard} />
+                        <Fa icon={faPersonChalkboard}/>
                     </span>
                     <span class="space">Cours</span>
                 </span>
@@ -39,19 +39,17 @@
                     remplacer un cours construit dans un référentiel précis.
                 </blockquote>
             </div>
-        </section>
-        <section class="section">
-            <div class="columns">
-                <div class="column is-4 has-text-centered">
+            <div class="columns is-desktop">
+                <div class="column is-12-tablet is-4-desktop has-text-centered">
                     <a href="/lessons/elec">
                         <div class="card">
                             <div class="card-image">
                                 <figure class="image is-4by3">
                                     <img
-                                        src="$lib/assets/elec.webp"
-                                        alt="Cours de génie électrique"
-                                        width="1280"
-                                        height="960"
+                                            alt="Cours de génie électrique"
+                                            height="960"
+                                            src="$lib/assets/elec.webp"
+                                            width="1280"
                                     />
                                 </figure>
                             </div>
@@ -59,10 +57,10 @@
                                 <div class="media">
                                     <div class="media-left">
                                         <span
-                                            class="icon-text is-size-2 has-text-primary"
+                                                class="icon-text is-size-2 has-text-primary"
                                         >
                                             <span class="icon">
-                                                <Fa icon={faBolt} />
+                                                <Fa icon={faBolt}/>
                                             </span>
                                         </span>
                                     </div>
@@ -75,7 +73,7 @@
                                 <div class="content">
                                     Étude des lois de l'électrocinétique, de
                                     l'électronique et de l'électrotechnique.
-                                    <br />
+                                    <br/>
                                 </div>
                                 <div class="tags">
                                     <span class="tag is-primary is-light">
@@ -101,16 +99,16 @@
                         </div>
                     </a>
                 </div>
-                <div class="column is-4 has-text-centered">
+                <div class="column is-12-tablet is-4-desktop has-text-centered">
                     <a href="/lessons/meca">
                         <div class="card">
                             <div class="card-image">
                                 <figure class="image is-4by3">
                                     <img
-                                        src="$lib/assets/meca.webp"
-                                        alt="Cours de génie mécanique"
-                                        width="1280"
-                                        height="960"
+                                            alt="Cours de génie mécanique"
+                                            height="960"
+                                            src="$lib/assets/meca.webp"
+                                            width="1280"
                                     />
                                 </figure>
                             </div>
@@ -118,10 +116,10 @@
                                 <div class="media">
                                     <div class="media-left">
                                         <span
-                                            class="icon-text is-size-2 has-text-primary"
+                                                class="icon-text is-size-2 has-text-primary"
                                         >
                                             <span class="icon">
-                                                <Fa icon={faWrench} />
+                                                <Fa icon={faWrench}/>
                                             </span>
                                         </span>
                                     </div>
@@ -134,7 +132,7 @@
                                 <div class="content">
                                     Etude de la cinématique, statique et
                                     dynamique des solides indéformables.
-                                    <br />
+                                    <br/>
                                 </div>
                                 <div class="tags">
                                     <span class="tag is-primary is-light">
@@ -157,16 +155,16 @@
                         </div>
                     </a>
                 </div>
-                <div class="column is-4 has-text-centered">
+                <div class="column is-12-tablet is-4-desktop has-text-centered">
                     <a href="/lessons/info">
                         <div class="card">
                             <div class="card-image">
                                 <figure class="image is-4by3">
                                     <img
-                                        src="$lib/assets/info.webp"
-                                        alt="Cours de génie informatique"
-                                        width="1280"
-                                        height="960"
+                                            alt="Cours de génie informatique"
+                                            height="960"
+                                            src="$lib/assets/info.webp"
+                                            width="1280"
                                     />
                                 </figure>
                             </div>
@@ -174,10 +172,10 @@
                                 <div class="media">
                                     <div class="media-left">
                                         <span
-                                            class="icon-text is-size-2 has-text-primary"
+                                                class="icon-text is-size-2 has-text-primary"
                                         >
                                             <span class="icon">
-                                                <Fa icon={faComputer} />
+                                                <Fa icon={faComputer}/>
                                             </span>
                                         </span>
                                     </div>
@@ -189,7 +187,7 @@
                                 </div>
                                 <div class="content">
                                     Etude des systèmes continus et discrets.
-                                    <br />
+                                    <br/>
                                 </div>
                                 <div class="tags">
                                     <span class="tag is-primary is-light">

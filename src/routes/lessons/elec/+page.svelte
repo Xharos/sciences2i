@@ -1,16 +1,24 @@
 <script>
+    import Breadcrumb from "$lib/components/Breadcrumb.svelte";
+    import {Crumbs} from '$lib/components/Crumbs.svelte';
     import {
         faBolt,
-        faPersonChalkboard,
     } from "@fortawesome/free-solid-svg-icons";
     import Fa from "svelte-fa";
+
+    const crumbs = [
+        Crumbs.COURS,
+        Crumbs.ELECTRICITE,
+    ];
+
+    export let data;
 </script>
 
 <svelte:head>
     <title>Électrique | Sciences 2I</title>
     <meta
-        name="description"
-        content="Liste des cours d'électricité en sciences industrielles de l'ingénieur."
+            content="Liste des cours d'électricité en sciences industrielles de l'ingénieur."
+            name="description"
     />
 </svelte:head>
 
@@ -21,31 +29,12 @@
             <div class="content">
                 <span class="icon-text is-size-3 has-text-primary">
                     <span class="icon">
-                        <Fa icon={faBolt} />
+                        <Fa icon={Crumbs.ELECTRICITE.icon}/>
                     </span>
-                    <span class="space">Génie électrique</span>
+                    <span class="space">{Crumbs.ELECTRICITE.textKey}</span>
                 </span>
             </div>
-            <nav class="breadcrumb" aria-label="breadcrumbs">
-                <ul>
-                    <li>
-                        <a href="/lessons">
-                            <span class="icon is-small is-primary">
-                                <Fa icon={faPersonChalkboard} />
-                            </span>
-                            <span>Cours</span>
-                        </a>
-                    </li>
-                    <li class="is-active">
-                        <a href="/lessons/elec" aria-current="page">
-                            <span class="icon is-small is-primary">
-                                <Fa icon={faBolt} />
-                            </span>
-                            Électricité
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            <Breadcrumb crumbs={crumbs}/>
             <div class="content">
                 <p>
                     Le génie électrique peut se décomposer en plusieurs
@@ -53,161 +42,69 @@
                 </p>
                 <div class="columns">
                     <div class="column is-4">
-                        <h2>
-                            <a href="/lessons/elec/electrokinetic"
-                                >Électrocinétique</a
-                            >
+                        <h2 class="icon-text is-size-4 has-text-primary">
+                            <span class="icon">
+                                <Fa icon={Crumbs.ELECTROCINETIQUE.icon}/>
+                            </span>
+                            <span style="margin-left: 2px;"><a
+                                    href={Crumbs.ELECTROCINETIQUE.link}>{Crumbs.ELECTROCINETIQUE.textKey}</a></span>
                         </h2>
                         <ul>
-                            <li>
-                                <span class="tag is-rounded is-primary is-light"
-                                    >L1</span
-                                >
-                                <a href="/lessons/elec/electrokinetic/1"
-                                    >Lois dans l'ARQS</a
-                                >
-                            </li>
-                            <li>
-                                <span class="tag is-rounded is-danger is-light"
-                                    >WIP...</span
-                                > Condensateur et bobine, circuits RC et RL
-                            </li>
-                            <li>
-                                <span class="tag is-rounded is-danger is-light"
-                                    >WIP...</span
-                                > Puissance en régime stationnaire
-                            </li>
-                            <li>
-                                <span class="tag is-rounded is-danger is-light"
-                                    >WIP...</span
-                                > Circuit RLC série
-                            </li>
-                            <li>
-                                <span class="tag is-rounded is-danger is-light"
-                                    >WIP...</span
-                                > Régime sinusoïdal
-                            </li>
-                            <li>
-                                <span class="tag is-rounded is-danger is-light"
-                                    >WIP...</span
-                                > Résonnances RLC série
-                            </li>
-                            <li>
-                                <span class="tag is-rounded is-danger is-light"
-                                    >WIP...</span
-                                > Filtrage analogique
-                            </li>
+                            {#each data.summaries.electrokinetics as {link, title, tagName, tagColor}}
+                                <li>
+                                    {#if tagName === 'WIP...'}
+                                        <span class="tag is-rounded is-light {tagColor}">{tagName}</span>
+                                        {title}
+                                    {:else}
+                                        <span class="tag is-rounded is-light {tagColor}">{tagName}</span>
+                                        <a href={link}>{title}</a>
+                                    {/if}
+                                </li>
+                            {/each}
                         </ul>
                     </div>
                     <div class="column is-4">
-                        <h2>
-                            <a href="/lessons/elec/electronic">Électronique</a>
+                        <h2 class="icon-text is-size-4 has-text-primary">
+                            <span class="icon">
+                                <Fa icon={Crumbs.ELECTRONIQUE.icon}/>
+                            </span>
+                            <span style="margin-left: 2px;"><a
+                                    href={Crumbs.ELECTRONIQUE.link}>{Crumbs.ELECTRONIQUE.textKey}</a></span>
                         </h2>
                         <ul>
-                            <li>
-                                <span class="tag is-rounded is-danger is-light"
-                                    >WIP...</span
-                                > Modélisation du transistor
-                            </li>
-                            <li>
-                                <span class="tag is-rounded is-danger is-light"
-                                    >WIP...</span
-                                > Amplificateur opérationnel
-                            </li>
-                            <li>
-                                <span class="tag is-rounded is-danger is-light"
-                                    >WIP...</span
-                                > Analyse spectrale
-                            </li>
-                            <li>
-                                <span class="tag is-rounded is-danger is-light"
-                                    >WIP...</span
-                                > Echantillonnage
-                            </li>
-                            <li>
-                                <span class="tag is-rounded is-danger is-light"
-                                    >WIP...</span
-                                > Bande de base
-                            </li>
-                            <li>
-                                <span class="tag is-rounded is-danger is-light"
-                                    >WIP...</span
-                                > Boucle à verrouillage de phase
-                            </li>
-                            <li>
-                                <span class="tag is-rounded is-danger is-light"
-                                    >WIP...</span
-                                > Modulation analogique
-                            </li>
-                            <li>
-                                <span class="tag is-rounded is-danger is-light"
-                                    >WIP...</span
-                                > Modulation numérique
-                            </li>
-                            <li>
-                                <span class="tag is-rounded is-danger is-light"
-                                    >WIP...</span
-                                > Représentation entiers/flottants
-                            </li>
-                            <li>
-                                <span class="tag is-rounded is-danger is-light"
-                                    >WIP...</span
-                                > Filtrage numérique
-                            </li>
-                            <li>
-                                <span class="tag is-rounded is-danger is-light"
-                                    >WIP...</span
-                                > Hyperfréquence
-                            </li>
+                            {#each data.summaries.electronics as {link, title, tagName, tagColor}}
+                                <li>
+                                    {#if tagName === 'WIP...'}
+                                        <span class="tag is-rounded is-light {tagColor}">{tagName}</span>
+                                        {title}
+                                    {:else}
+                                        <span class="tag is-rounded is-light {tagColor}">{tagName}</span>
+                                        <a href={link}>{title}</a>
+                                    {/if}
+                                </li>
+                            {/each}
                         </ul>
                     </div>
                     <div class="column is-4">
-                        <h2>
-                            <a href="/lessons/elec/electrical"
-                                >Électrotechnique</a
-                            >
+                        <h2 class="icon-text is-size-4 has-text-primary">
+                            <span class="icon">
+                                <Fa icon={Crumbs.ELECTROTECHNIQUE.icon}/>
+                            </span>
+                            <span style="margin-left: 2px;"><a
+                                    href={Crumbs.ELECTROTECHNIQUE.link}>{Crumbs.ELECTROTECHNIQUE.textKey}</a></span>
                         </h2>
                         <ul>
-                            <li>
-                                <span class="tag is-rounded is-danger is-light"
-                                    >WIP...</span
-                                > Systèmes polyphasés équilibrés
-                            </li>
-                            <li>
-                                <span class="tag is-rounded is-danger is-light"
-                                    >WIP...</span
-                                > Puissances déformantes/harmoniques
-                            </li>
-                            <li>
-                                <span class="tag is-rounded is-danger is-light"
-                                    >WIP...</span
-                                > Modélisation du transformateur
-                            </li>
-                            <li>
-                                <span class="tag is-rounded is-danger is-light"
-                                    >WIP...</span
-                                > Hacheurs
-                            </li>
-                            <li>
-                                <span class="tag is-rounded is-danger is-light"
-                                    >WIP...</span
-                                > Alimentations à découpage
-                            </li>
-                            <li>
-                                <span class="tag is-rounded is-danger is-light"
-                                    >WIP...</span
-                                > Redresseurs passifs
-                            </li>
-                            <li>
-                                <span class="tag is-rounded is-danger is-light"
-                                    >WIP...</span
-                                > Redresseurs commandés
-                            </li>
-                            <li>
-                                <span class="tag is-rounded is-danger is-light"
-                                    >WIP...</span
-                                > Systèmes polyphasés déséquilibrés
-                            </li>
+                            {#each data.summaries.electricals as {link, title, tagName, tagColor}}
+                                <li>
+                                    {#if tagName === 'WIP...'}
+                                        <span class="tag is-rounded is-light {tagColor}">{tagName}</span>
+                                        {title}
+                                    {:else}
+                                        <span class="tag is-rounded is-light {tagColor}">{tagName}</span>
+                                        <a href={link}>{title}</a>
+                                    {/if}
+                                </li>
+                            {/each}
                         </ul>
                     </div>
                 </div>
