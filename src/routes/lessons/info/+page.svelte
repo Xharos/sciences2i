@@ -61,6 +61,7 @@
                 datasets: [{
                     label: 'Second ordre impulsionnel sous-amorti',
                     data: yValues,
+                    borderColor: '#1469b8',
                     fill: false,
                     pointRadius: 0 // hide the data points
                 }]
