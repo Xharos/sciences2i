@@ -171,6 +171,14 @@
 
         manager.add(scroller);
         return () => manager.remove(scroller);
+
+    });
+
+    onMount(() => {
+        const {hash} = document.location;
+        const scrollTo = hash && document.getElementById(hash.slice(1));
+        if (scrollTo)
+            scrollTo.scrollIntoView();
     });
 
     function update() {
