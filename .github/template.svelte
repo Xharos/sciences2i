@@ -28,10 +28,9 @@
 
 <svelte:head>
     <title>{title} | Sciences 2I</title>
-    <meta
-            content="TODO A MODIFIER."
-            name="description"
-    />
+    <meta content={description} name="description"/>
+    <meta content={description} property="og:description">
+    <meta content={description} name="twitter:description">
 </svelte:head>
 
 <Scroller {crumbs} {element} {lastCrumb} {lastDate} {nextElement} {prevElement} {title} {url}>
