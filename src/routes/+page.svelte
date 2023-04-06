@@ -29,14 +29,15 @@
                 return [];
             });
     });
+
+    let description = "Cours, fiches et tutoriels pour l'enseignement des sciences industrielles de l'ingénieur dans l'enseignement supérieur.";
 </script>
 
 <svelte:head>
     <title>Sciences 2I</title>
-    <meta
-            content="Cours, fiches et tutoriels pour l'enseignement des sciences industrielles de l'ingénieur dans l'enseignement supérieur."
-            name="description"
-    />
+    <meta content={description} name="description"/>
+    <meta content={description} property="og:description">
+    <meta content={description} name="twitter:description">
 </svelte:head>
 
 <!-- svelte-ignore a11y-img-redundant-alt -->

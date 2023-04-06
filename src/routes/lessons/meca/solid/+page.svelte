@@ -8,14 +8,15 @@
         Crumbs.MECANIQUE,
         Crumbs.SOLIDE,
     ];
+
+    let description = "Liste des cours de mécanique du solide en sciences industrielles de l'ingénieur.";
 </script>
 
 <svelte:head>
     <title>Mécanique solide | Sciences 2I</title>
-    <meta
-            content="Liste des cours de mécanique du solide en sciences industrielles de l'ingénieur."
-            name="description"
-    />
+    <meta content={description} name="description"/>
+    <meta content={description} property="og:description">
+    <meta content={description} name="twitter:description">
 </svelte:head>
 
 <div class="columns is-centered">

@@ -119,14 +119,15 @@
             }
         });
     });
+
+    let description = "Page de démonstration du site Sciences 2I."
 </script>
 
 <svelte:head>
     <title>Démonstration | Sciences 2I</title>
-    <meta
-            content="Page de démonstration du site sciences-2i."
-            name="description"
-    />
+    <meta content={description} name="description"/>
+    <meta content={description} property="og:description">
+    <meta content={description} name="twitter:description">
 </svelte:head>
 
 <Scroller {crumbs} {lastCrumb} {lastDate} {title} {url}>

@@ -19,14 +19,14 @@
     const lastCrumb = {
         textKey: title,
     };
+    let description = "Cours sur les bobines et condensateurs dans l'approximation des régimes quasi stationnaires (ARQS).";
 </script>
 
 <svelte:head>
     <title>{title} | Sciences 2I</title>
-    <meta
-            content="Cours sur les bobines et condensateurs dans l'approximation des régimes quasi stationnaires (ARQS)."
-            name="description"
-    />
+    <meta content={description} name="description"/>
+    <meta content={description} property="og:description">
+    <meta content={description} name="twitter:description">
 </svelte:head>
 
 <Scroller author="fabien" {crumbs} {element} {lastCrumb} {lastDate} {nextElement} {prevElement} {title} {url}>
