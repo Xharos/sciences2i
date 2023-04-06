@@ -22,7 +22,6 @@
     };
 
     import Chart from 'chart.js/auto';
-
     import {onMount} from 'svelte';
 
     // Generate an array of x values between 0 and 10 with a step of 0.1
