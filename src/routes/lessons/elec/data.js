@@ -170,11 +170,11 @@ export const electricals = [
     lastDate: "29/03/2023",
   },
   {
-    link: electricalLinkBase + "",
+    link: electricalLinkBase + "redresseur-passif",
     title: "Redresseurs passifs",
-    tagName: "WIP...",
-    tagColor: "is-danger",
-    lastDate: "29/03/2023",
+    tagName: "L1",
+    tagColor: "is-primary",
+    lastDate: "06/05/2023",
   },
   {
     link: electricalLinkBase + "",
