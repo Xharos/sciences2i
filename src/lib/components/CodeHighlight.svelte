@@ -11,7 +11,7 @@
 </script>
 
 <Highlight class="highlight-container" {code} {language} let:highlighted>
-    <LineNumbers hideBorder={false} {highlighted}/>
+    <LineNumbers class="scrollable-container" hideBorder={false} {highlighted}/>
 </Highlight>
 
 
