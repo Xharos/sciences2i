@@ -7,7 +7,6 @@
     let title = "Condensateur et bobine, circuits RC et RL";
 
     const [prevElement, element, nextElement] = data.getElement(title);
-    let url = element.link;
     let lastDate = element.lastDate;
 
     const crumbs = [
@@ -29,7 +28,7 @@
     <meta content={description} name="twitter:description">
 </svelte:head>
 
-<Scroller author="fabien" {crumbs} {element} {lastCrumb} {lastDate} {nextElement} {prevElement} {title} {url}>
+<Scroller author="fabien" {crumbs} {element} {lastCrumb} {lastDate} {nextElement} {prevElement} {title}>
     <div slot="foreground">
         <h1>La bobine</h1>
     </div>

@@ -2,6 +2,8 @@
     import katex from "katex";
 
     export let math;
+
+    export let ref;
     export let displayMode = false;
 
     const options = {
@@ -21,7 +23,7 @@
     />
 </svelte:head>
 {#if displayMode}
-    <div class="scrollable-container">
+    <div class="scrollable-container" id={ref || null}>
         {@html katexString}
     </div>
 {:else}

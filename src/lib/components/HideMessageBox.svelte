@@ -3,6 +3,8 @@
 
     export let title;
 
+    export let ref;
+
     let isExpanded = false;
 
     function toggleExpansion() {
@@ -20,7 +22,7 @@
 </script>
 <div class="columns is-desktop is-centered">
     <div class="column is-12-tablet is-11-desktop">
-        <article class="message is-primary">
+        <article class="message is-primary" id={ref || null}>
             <div class="message-header" on:click={toggleExpansion}>
                 <span>{title} </span>
                 <span>[Cliquez moi]</span>
