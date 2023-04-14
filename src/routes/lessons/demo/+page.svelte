@@ -5,6 +5,8 @@
     import Framed from "$lib/components/Framed.svelte";
     import Figure from "$lib/components/Figure.svelte";
     import {Crumbs} from '$lib/components/Crumbs.svelte';
+    import CodeHighlight from "$lib/components/CodeHighlight.svelte";
+    import js from "svelte-highlight/languages/python";
     import K from "$lib/components/K.svelte";
 
     let title = "Cours démonstration";
@@ -120,7 +122,41 @@
         });
     });
 
-    let description = "Page de démonstration du site Sciences 2I."
+    let code = "import numpy as np\n" +
+        "import matplotlib.pyplot as plt\n" +
+        "from scipy.integrate import solve_ivp\n" +
+        "\n" +
+        "def pendulum(t, y, L=1, g=9.81):\n" +
+        "    \"\"\"Defines the differential equation for a simple pendulum.\"\"\"\n" +
+        "    theta, omega = y\n" +
+        "    dydt = [omega, -(g/L) * np.sin(theta)]\n" +
+        "    return dydt\n" +
+        "\n" +
+        "# Define initial conditions and time span\n" +
+        "theta0 = np.pi/4  # initial angle\n" +
+        "omega0 = 0  # initial angular velocity\n" +
+        "y0 = [theta0, omega0]  # initial state\n" +
+        "t_span = [0, 10]  # time span\n" +
+        "\n" +
+        "# Solve the differential equation\n" +
+        "sol = solve_ivp(pendulum, t_span, y0)\n" +
+        "\n" +
+        "# Extract the solution\n" +
+        "theta = sol.y[0]\n" +
+        "omega = sol.y[1]\n" +
+        "t = sol.t\n" +
+        "\n" +
+        "# Plot the solution\n" +
+        "fig, ax = plt.subplots()\n" +
+        "ax.plot(t, theta, label='theta')\n" +
+        "ax.plot(t, omega, label='omega')\n" +
+        "ax.set_xlabel('Time')\n" +
+        "ax.set_ylabel('Angle / Angular Velocity')\n" +
+        "ax.set_title('Simple Pendulum')\n" +
+        "ax.legend()\n" +
+        "plt.show()";
+
+    let description = "Page de démonstration du site Sciences 2I.";
 </script>
 
 <svelte:head>
@@ -233,6 +269,7 @@
         <br/>
         <br/>
 
+        <CodeHighlight code={code} language={js}/>
 
     </div>
 </Scroller>

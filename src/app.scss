@@ -200,6 +200,26 @@ strong {
   }
 }
 
+// CSS for highlight
+
+pre {
+  background-color: transparent !important;
+  line-height: 20px;
+}
+
+.content pre {
+  padding: 0 0;
+}
+
+code {
+  background-color: transparent !important;
+}
+
+.hljs {
+  color: $primary;
+}
+
+// end CSS for highlight
 
 // CSS for special svelte component
 
