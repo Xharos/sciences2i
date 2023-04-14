@@ -17,7 +17,40 @@
             e.preventDefault();
             deferredInstallEvent = e;
         })
-    })
+    });
+
+    onMount(() => {
+        const {hash} = document.location;
+        const scrollTo = hash && document.getElementById(hash.slice(1));
+        if (scrollTo) {
+            const targetOffsetTop = scrollTo.getBoundingClientRect().top + window.scrollY;
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const offset = navbarHeight; // add your desired offset value here
+            window.scrollTo({top: targetOffsetTop - offset - 10, behavior: 'smooth'});
+        }
+
+        document.addEventListener('click', (event) => {
+            const target = event.target;
+            if (target.tagName === 'A') {
+                const href = target.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    const scrollTo = document.getElementById(href.slice(1));
+                    if (scrollTo) {
+                        const targetOffsetTop = scrollTo.getBoundingClientRect().top + window.scrollY;
+                        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                        const offset = navbarHeight; // add your desired offset value here
+                        window.scrollTo({top: targetOffsetTop - offset - 10, behavior: 'smooth'});
+                        event.preventDefault();
+
+                        // Update the URL with the new anchor tag
+                        const urlWithoutHash = window.location.href.split('#')[0];
+                        const newUrl = `${urlWithoutHash}${href}`;
+                        window.history.pushState({}, '', newUrl);
+                    }
+                }
+            }
+        });
+    });
 
     async function handleInstall() {
         deferredInstallEvent.prompt();

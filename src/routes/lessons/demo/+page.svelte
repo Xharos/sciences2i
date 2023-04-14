@@ -11,7 +11,6 @@
 
     let title = "Cours démonstration";
 
-    let url = "/lessons/demo/";
     let lastDate = "05/04/2023";
 
     // A modifier
@@ -166,7 +165,7 @@
     <meta content={description} name="twitter:description">
 </svelte:head>
 
-<Scroller {crumbs} {lastCrumb} {lastDate} {title} {url}>
+<Scroller {crumbs} {lastCrumb} {lastDate} {title}>
     <div slot="foreground">
         <h1>Mon premier titre</h1>
         <p>La table des matières est cliquable et se remplit toute seule pour chaque balise h1 et h2 dans le texte.</p>
@@ -187,7 +186,7 @@
         <h2>Bloc définition</h2>
         <p>Bloc coloré en bleu, le compteur est intégré :</p>
         <!-- type peut être property, definition, remember -->
-        <Message title="Système linéaire" type="definition">
+        <Message ref="test" title="Système linéaire" type="definition">
             Un système linéaire au sens de l'automatique est un système qui peut être décrit par des équations
             linéaires.
         </Message>
@@ -270,6 +269,8 @@
         <br/>
 
         <CodeHighlight code={code} language={js}/>
+
+        <p>Voir définition 1 <a href="#test">système linéaire</a></p>
 
     </div>
 </Scroller>

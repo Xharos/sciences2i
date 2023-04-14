@@ -8,7 +8,6 @@
     let title = "Lois dans l'ARQS";
 
     const [prevElement, element, nextElement] = data.getElement(title);
-    let url = element.link;
     let lastDate = element.lastDate;
 
     const crumbs = [
@@ -30,7 +29,7 @@
     <meta content={description} name="twitter:description">
 </svelte:head>
 
-<Scroller {crumbs} {element} {lastCrumb} {lastDate} {nextElement} {prevElement} {title} {url}>
+<Scroller {crumbs} {element} {lastCrumb} {lastDate} {nextElement} {prevElement} {title}>
     <div slot="foreground">
         <h1>Le courant électrique</h1>
         <p>

@@ -84,7 +84,6 @@
     export let offset = 0;
     export let progress = 0;
     export let visible = false;
-    export let url = "/";
     export let lastDate = "29/03/2023";
 
     export let crumbs = [];
@@ -140,20 +139,12 @@
             const container = document.createElement('div');
             container.id = `section-${i + 1}`;
 
-            const innerContainer = document.createElement('div');
-            innerContainer.classList.add("inner");
-            if (i === 0) {
-                innerContainer.classList.add("intro");
-            }
-
             const titleInnerContainer = document.createElement('div');
             titleInnerContainer.classList.add("title-link-container");
 
             titlesDOM[i].removeAttribute("id");
 
             titlesDOM[i].parentNode.insertBefore(container, titlesDOM[i]);
-            container.appendChild(innerContainer);
-            innerContainer.appendChild(titleInnerContainer);
 
             const link = document.createElement('a');
             link.href = `#section-${i + 1}`;
@@ -161,6 +152,8 @@
             link.classList.add('link-translucent');
             titleInnerContainer.appendChild(link);
             titleInnerContainer.appendChild(titlesDOM[i]);
+
+            container.appendChild(titleInnerContainer);
         }
 
         count = sections.length;
@@ -172,13 +165,6 @@
         manager.add(scroller);
         return () => manager.remove(scroller);
 
-    });
-
-    onMount(() => {
-        const {hash} = document.location;
-        const scrollTo = hash && document.getElementById(hash.slice(1));
-        if (scrollTo)
-            scrollTo.scrollIntoView();
     });
 
     function update() {
@@ -276,7 +262,7 @@
                         </div>
                         {#each titles as title, i}
                             {#if title[1] === "H1"}
-                                <a href={url + "#" + title[2]} class="menu-label"
+                                <a href={"#" + title[2]} class="menu-label"
                                 >{title[0]}</a
                                 >
                                 <ul class="menu-list">
@@ -286,7 +272,7 @@
                                         .slice(i + 1, titles.length)
                                         .find((obj) => obj[1] === "H1"))) as section}
                                         <li>
-                                            <a href={url + "#" + section[2]}
+                                            <a href={"#" + section[2]}
                                             >{section[0]}</a
                                             >
                                         </li>
