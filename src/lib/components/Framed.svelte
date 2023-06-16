@@ -4,6 +4,6 @@
 
 <article class="message is-primary" id={ref || null}>
     <div class="message-body">
-        <slot/>
+
     </div>
 </article>
