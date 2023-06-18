@@ -1,11 +1,12 @@
 {
   "name": "sciences-2i",
-  "version": "0.9",
+  "version": "0.9npm audit fix",
   "private": true,
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postbuild": "npx svelte-sitemap --domain https://sciences-2i.fr --reset-time --change-freq monthly"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^2.0.1",
@@ -15,6 +16,7 @@
     "svelte": "^3.54.0",
     "svelte-highlight": "^7.2.1",
     "svelte-preprocess": "^4.10.7",
+    "svelte-sitemap": "^2.6.0",
     "svelte-youtube-embed": "^0.1.8",
     "vite": "^4.2.0"
   },
