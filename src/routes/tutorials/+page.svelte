@@ -1,16 +1,17 @@
 <script>
     import {faChalkboardTeacher} from "@fortawesome/free-solid-svg-icons";
     import Fa from "svelte-fa";
+
+    let description = "Liste de tutoriels pour l'enseignement des sciences industrielles de l'ingénieur dans l'enseignement supérieur."
 </script>
 
 <svelte:head>
     <title>
         Tutoriels | Sciences 2I
     </title>
-    <meta
-            content="Liste de tutoriels pour l'enseignement des sciences industrielles de l'ingénieur dans l'enseignement supérieur."
-            name="description"
-    />
+    <meta content={description} name="description"/>
+    <meta content={description} property="og:description">
+    <meta content={description} name="twitter:description">
 </svelte:head>
 
 <div class="columns is-centered">

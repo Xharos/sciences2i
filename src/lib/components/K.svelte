@@ -2,6 +2,8 @@
     import katex from "katex";
 
     export let math;
+
+    export let ref;
     export let displayMode = false;
 
     const options = {
@@ -21,12 +23,8 @@
     />
 </svelte:head>
 {#if displayMode}
-    <div class="columns is-centered">
-        <div class="column is-12">
-            <div class="scrollable-container">
-                {@html katexString}
-            </div>
-        </div>
+    <div class="scrollable-container" id={ref || null}>
+        {@html katexString}
     </div>
 {:else}
     {@html katexString}

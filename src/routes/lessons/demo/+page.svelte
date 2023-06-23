@@ -5,11 +5,12 @@
     import Framed from "$lib/components/Framed.svelte";
     import Figure from "$lib/components/Figure.svelte";
     import {Crumbs} from '$lib/components/Crumbs.svelte';
+    import CodeHighlight from "$lib/components/CodeHighlight.svelte";
+    import js from "svelte-highlight/languages/python";
     import K from "$lib/components/K.svelte";
 
     let title = "Cours démonstration";
 
-    let url = "/lessons/demo/";
     let lastDate = "05/04/2023";
 
     // A modifier
@@ -119,17 +120,52 @@
             }
         });
     });
+
+    let code = "import numpy as np\n" +
+        "import matplotlib.pyplot as plt\n" +
+        "from scipy.integrate import solve_ivp\n" +
+        "\n" +
+        "def pendulum(t, y, L=1, g=9.81):\n" +
+        "    \"\"\"Defines the differential equation for a simple pendulum.\"\"\"\n" +
+        "    theta, omega = y\n" +
+        "    dydt = [omega, -(g/L) * np.sin(theta)]\n" +
+        "    return dydt\n" +
+        "\n" +
+        "# Define initial conditions and time span\n" +
+        "theta0 = np.pi/4  # initial angle\n" +
+        "omega0 = 0  # initial angular velocity\n" +
+        "y0 = [theta0, omega0]  # initial state\n" +
+        "t_span = [0, 10]  # time span\n" +
+        "\n" +
+        "# Solve the differential equation\n" +
+        "sol = solve_ivp(pendulum, t_span, y0)\n" +
+        "\n" +
+        "# Extract the solution\n" +
+        "theta = sol.y[0]\n" +
+        "omega = sol.y[1]\n" +
+        "t = sol.t\n" +
+        "\n" +
+        "# Plot the solution\n" +
+        "fig, ax = plt.subplots()\n" +
+        "ax.plot(t, theta, label='theta')\n" +
+        "ax.plot(t, omega, label='omega')\n" +
+        "ax.set_xlabel('Time')\n" +
+        "ax.set_ylabel('Angle / Angular Velocity')\n" +
+        "ax.set_title('Simple Pendulum')\n" +
+        "ax.legend()\n" +
+        "plt.show()";
+
+    let description = "Page de démonstration du site Sciences 2I.";
 </script>
 
 <svelte:head>
     <title>Démonstration | Sciences 2I</title>
-    <meta
-            content="Page de démonstration du site sciences-2i."
-            name="description"
-    />
+    <meta content={description} name="description"/>
+    <meta content={description} property="og:description">
+    <meta content={description} name="twitter:description">
 </svelte:head>
 
-<Scroller {crumbs} {lastCrumb} {lastDate} {title} {url}>
+<Scroller {crumbs} {lastCrumb} {lastDate} {title}>
     <div slot="foreground">
         <h1>Mon premier titre</h1>
         <p>La table des matières est cliquable et se remplit toute seule pour chaque balise h1 et h2 dans le texte.</p>
@@ -150,7 +186,7 @@
         <h2>Bloc définition</h2>
         <p>Bloc coloré en bleu, le compteur est intégré :</p>
         <!-- type peut être property, definition, remember -->
-        <Message title="Système linéaire" type="definition">
+        <Message ref="test" title="Système linéaire" type="definition">
             Un système linéaire au sens de l'automatique est un système qui peut être décrit par des équations
             linéaires.
         </Message>
@@ -232,6 +268,9 @@
         <br/>
         <br/>
 
+        <CodeHighlight code={code} language={js}/>
+
+        <p>Voir définition 1 <a href="#test">système linéaire</a></p>
 
     </div>
 </Scroller>

@@ -12,14 +12,15 @@
     ];
 
     export let data;
+
+    let description = "Liste des cours d'électricité en sciences industrielles de l'ingénieur.";
 </script>
 
 <svelte:head>
     <title>Électrique | Sciences 2I</title>
-    <meta
-            content="Liste des cours d'électricité en sciences industrielles de l'ingénieur."
-            name="description"
-    />
+    <meta content={description} name="description"/>
+    <meta content={description} property="og:description">
+    <meta content={description} name="twitter:description">
 </svelte:head>
 
 <!-- svelte-ignore a11y-img-redundant-alt -->

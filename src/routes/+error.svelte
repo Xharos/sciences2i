@@ -1,13 +1,14 @@
 <script>
     import {page} from '$app/stores';
+
+    let description = "Mauvaise route!"
 </script>
 
 <svelte:head>
     <title>{$page.status} | Sciences 2I</title>
-    <meta
-            content="Page d'erreur du site sciences-2i."
-            name="description"
-    />
+    <meta content={description} name="description"/>
+    <meta content={description} property="og:description">
+    <meta content={description} name="twitter:description">
 </svelte:head>
 
 <div class="columns is-centered">

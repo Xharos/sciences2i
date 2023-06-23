@@ -5,6 +5,8 @@
 
     export let legend;
 
+    export let ref;
+
     let countValue;
     onMount(() => {
         figureCount.update(n => n + 1);
@@ -16,7 +18,7 @@
     });
 </script>
 
-<div class="columns is-centered">
+<div class="columns is-centered" id={ref || null}>
     <div class="column is-8">
         <div class="container is-max-desktop">
             <div class="is-flex is-justify-content-center is-align-items-center">

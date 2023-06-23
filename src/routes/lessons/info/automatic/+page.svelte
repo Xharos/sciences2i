@@ -8,14 +8,15 @@
         Crumbs.INFORMATIQUE,
         Crumbs.AUTOMATIQUE,
     ];
+
+    let description = "Liste des cours d'automatique en sciences industrielles de l'ingénieur.";
 </script>
 
 <svelte:head>
     <title>Automatique | Sciences 2I</title>
-    <meta
-            content="Liste des cours d'automatique en sciences industrielles de l'ingénieur."
-            name="description"
-    />
+    <meta content={description} name="description"/>
+    <meta content={description} property="og:description">
+    <meta content={description} name="twitter:description">
 </svelte:head>
 
 <div class="columns is-centered">

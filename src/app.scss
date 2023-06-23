@@ -97,18 +97,6 @@ a.menu-label {
   font-weight: bold;
 }
 
-.inner {
-  position: relative;
-}
-
-.inner:before {
-  content: "";
-  display: block;
-  height: 50px !important;
-  margin: -50px 0 0 !important;
-  z-index: -1;
-}
-
 .title-link-container {
   display: flex;
   align-items: center;
@@ -200,6 +188,26 @@ strong {
   }
 }
 
+// CSS for highlight
+
+pre {
+  background-color: transparent !important;
+  line-height: 20px;
+}
+
+.content pre {
+  padding: 0 0;
+}
+
+code {
+  background-color: transparent !important;
+}
+
+.hljs {
+  color: $primary;
+}
+
+// end CSS for highlight
 
 // CSS for special svelte component
 

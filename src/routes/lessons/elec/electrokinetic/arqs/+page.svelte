@@ -8,7 +8,6 @@
     let title = "Lois dans l'ARQS";
 
     const [prevElement, element, nextElement] = data.getElement(title);
-    let url = element.link;
     let lastDate = element.lastDate;
 
     const crumbs = [
@@ -20,17 +19,17 @@
     const lastCrumb = {
         textKey: title,
     };
+    let description = "Cours sur les lois électriques dans l'approximation des régimes quasi stationnaires (ARQS).";
 </script>
 
 <svelte:head>
     <title>{title} | Sciences 2I</title>
-    <meta
-            content="Cours sur les lois électriques dans l'approximation des régimes quasi stationnaires (ARQS)."
-            name="description"
-    />
+    <meta content={description} name="description"/>
+    <meta content={description} property="og:description">
+    <meta content={description} name="twitter:description">
 </svelte:head>
 
-<Scroller {crumbs} {element} {lastCrumb} {lastDate} {nextElement} {prevElement} {title} {url}>
+<Scroller {crumbs} {element} {lastCrumb} {lastDate} {nextElement} {prevElement} {title}>
     <div slot="foreground">
         <h1>Le courant électrique</h1>
         <p>
