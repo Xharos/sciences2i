@@ -13,16 +13,16 @@ class Author {
 const valentin = new Author(
   "BURGAUD Valentin",
   "valentin.burgaud@ens-rennes.fr",
-  "Étudiant à l'École Normale Supérieure de Rennes, je prépare le parcours enseignement à l'agrégation de sciences industrielles option génie électrique.",
+  "Étudiant à l'École Normale Supérieure de Rennes, lauréat de l'agrégation de sciences industrielles option génie électrique 2023.",
   valentinLogo
 );
 
 const fabien = new Author(
-    "SANCHEZ Fabien",
-    "fabien.sanchez@ens-rennes.fr",
-    "Étudiant à l'École Normale Supérieure de Rennes, lauréat de l'agrégation de sciences industrielles option génie électrique 2022.",
-    fabienLogo
+  "SANCHEZ Fabien",
+  "fabien.sanchez@ens-rennes.fr",
+  "Étudiant à l'École Normale Supérieure de Rennes, lauréat de l'agrégation de sciences industrielles option génie électrique 2022.",
+  fabienLogo
 );
 
-let authors = {valentin: valentin, fabien:fabien};
+let authors = { valentin: valentin, fabien: fabien };
 export default authors;
